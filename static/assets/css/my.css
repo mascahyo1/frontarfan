@@ -1,0 +1,37 @@
+
+     a:link { text-decoration: none; }
+
+
+     a:visited { text-decoration: none; }
+ 
+ 
+     a:hover { text-decoration: none; }
+ 
+ 
+     a:active { text-decoration: none; }
+
+.body {
+     
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+margin-top: auto;
+/* margin-top: 30px; */
+}
+.fwa-spinner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1999000;
+    background-color: rgba(0, 0, 0, 0.3);
+    overscroll-behavior: contain;
+  }
