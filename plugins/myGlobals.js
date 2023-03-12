@@ -1,8 +1,8 @@
 export default (context, inject) => {
     const myGlobal = 'This is a global variable';
-    const baseurl = 'http://localhost:1337/api';
-    const imageurl = 'http://localhost:1337';
-    const publictoken = 'f6e43f7e2ac01a4b238051218a5175fde6b5afece5710ade4f92af0135831eb5b2616519604d9224343beb0b36f41fb42f0b4d3e7aa6956190c58e647c8fc689baa9a4148c18a3f6360051480d5a5bdddc55f953940a0c38c01d7b16dcb89c3049c5049033ae99911892ae252adf64831706153bf4d505e466dcaeb18ad7908b';
+    const baseurl = 'https://arfanapi.cahyosoft.my.id/api';
+    const imageurl = 'https://arfanapi.cahyosoft.my.id';
+    const publictoken = 'e061c9cc1b046cef822fd3a0a34fa4a0de18182ba5764c474b4a29a337fedb887eb4e9701f95917b86f7053540690401566ef21a7f85dd89c6a0746464a284bb7d34ebab0345cdc92b195b9ced9e5882d469cb05a359d43f4f6c1d2f866f048e618290cf4ed3f49445510de0d191ad960110dfea579e147954ca0ea1bae4d0e9';
     inject('myGlobal', myGlobal);
     inject('baseurl', baseurl);
     inject('imageurl', imageurl);

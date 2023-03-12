@@ -1,43 +1,44 @@
 <template>
     <div>
         <header>
-            <nav class="navbar navbar-expand-xl bg-dark navbar-dark">
+            <nav class="navbar navbar-expand-md pt-0">
                 <div class="container">
-                    <nuxt-link class="navbar-brand" to="/#" >IDOL</nuxt-link>
+                    
         
+                    <nuxt-link class="navbar-brand bg-danger m-0 d-block d-md-none" to="/#" ><img src="/assets/img/logo.png" class="img-fluid "></nuxt-link>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="mynavbar">
-                        <ul class="ms-auto navbar-nav">
-                            <li class="nav-item">
-                                <nuxt-link class="nav-link" to="/#about_us">Home</nuxt-link>
-                            </li>
-                            <li class="nav-item">
-                                <nuxt-link class="nav-link" to="/#about_us">About Us</nuxt-link>
-                            </li>
-                            <li class="nav-item">
-                                <nuxt-link class="nav-link" to="/#dota2">Dota 2</nuxt-link>
-                            </li>
-                            <li class="nav-item">
-                                <nuxt-link class="nav-link" to="/#12v12">12 vs 12</nuxt-link>
-                            </li>
-                            <li class="nav-item">
-                                <nuxt-link class="nav-link" to="/news">News</nuxt-link>
-                            </li>
-                            <li class="nav-item">
-                                <nuxt-link class="nav-link" to="/showcase">Showcase</nuxt-link>
-                            </li>
-                            <li class="nav-item" v-if="isUser">
-                                
-                                <nuxt-link to="/manage-showcase" class="nav-link" >Manage Showcase</nuxt-link>
-                            </li>
-                            <li class="nav-item">
-                                
-                                <nuxt-link to="/profile" class="nav-link" v-if="isUser">Profile</nuxt-link>
-                                <nuxt-link to="/login" class="nav-link" v-else>Login</nuxt-link>
-                            </li>
-                        </ul>
+                    <ul class="ms-auto">
+
+                    </ul>
+                    <ul class="navbar-nav ">
+                        <li class="nav-item">
+                            <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/#about_us">Home</nuxt-link>
+                        </li>
+                        <li class="nav-item">
+                            <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/#about_us">Work</nuxt-link>
+                        </li>
+                        <li class="nav-item">
+                            <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/#dota2">Project</nuxt-link>
+                        </li>
+                    </ul>
+                    <nuxt-link class="navbar-brand   d-none d-md-block" to="/#" ><img src="/assets/img/logo.png" class="img-fluid "></nuxt-link>
+                    <ul class=" navbar-nav ">
+                        <li class="nav-item">
+                            <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/#about_us">Blog</nuxt-link>
+                        </li>
+                        <li class="nav-item">
+                            <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/#about_us">About</nuxt-link>
+                        </li>
+                        <li class="nav-item">
+                            <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/contact">Contact</nuxt-link>
+                        </li>
+                    </ul>
+                    <ul class="me-auto">
+
+                    </ul>
                     </div>
                 </div>
             </nav>

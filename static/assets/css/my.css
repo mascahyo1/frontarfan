@@ -15,11 +15,59 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    
 }
 
+.footer_sosmed {
+    font-size: 29px;
+}
 .footer {
 margin-top: auto;
 /* margin-top: 30px; */
+}
+.fred {
+    color: #EA4235;
+
+}
+.fdarkprimary {
+    color:#2F3239;
+}
+.f66 {
+    font-family: 'Poppins';
+    font-style: normal;
+    line-height: 100px;
+    font-size: 66.76px;
+
+}
+.fw600 {
+    font-weight: 600;
+}
+
+.navbar-brand {
+    background-color: #EA4235;
+    padding-top: 18px!important;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 18px!important;
+    border-radius: 0px 0px 40px 40px;
+    margin:0!important
+
+}
+.fpoppins {
+    font-family: 'Poppins';
+    font-style: normal;
+}
+.f17 {
+    font-size: 17px;
+    line-height: 26px;
+}
+.f14 {
+    font-size: 14px;
+    line-height: 17px;
+}
+.finter {
+    font-family: 'Inter';
+    font-style: normal;
 }
 .fwa-spinner {
     display: flex;
@@ -35,3 +83,15 @@ margin-top: auto;
     background-color: rgba(0, 0, 0, 0.3);
     overscroll-behavior: contain;
   }
+
+/* .workhomecontainer .col-md-4:nth-child(odd) {
+    margin-top: 64px;
+} */
+.btn_contact {
+    background-color: #EA4235!important;
+}
+@media only screen and (min-width: 768px) {
+    .mt64 {
+        margin-top: 64px;
+    }
+}
