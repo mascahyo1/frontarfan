@@ -27,7 +27,7 @@
                     <nuxt-link class="navbar-brand   d-none d-md-block" to="/#" ><img src="/assets/img/logo.png" class="img-fluid "></nuxt-link>
                     <ul class=" navbar-nav ">
                         <li class="nav-item">
-                            <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/#about_us">Blog</nuxt-link>
+                            <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/blog">Blog</nuxt-link>
                         </li>
                         <li class="nav-item">
                             <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/#about_us">About</nuxt-link>

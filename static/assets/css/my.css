@@ -57,6 +57,13 @@ margin-top: auto;
     font-family: 'Poppins';
     font-style: normal;
 }
+.f34 {
+    font-size: 34.18px;
+    line-height: 51px;
+}
+.fw700 {
+    font-weight: 700;
+}
 .f17 {
     font-size: 17px;
     line-height: 26px;
@@ -64,6 +71,19 @@ margin-top: auto;
 .f14 {
     font-size: 14px;
     line-height: 17px;
+}
+.f11 {
+    font-size: 11.2px;
+line-height: 14px;
+}
+.colorgrey {
+    color: #626262;
+}
+.colorsecondary {
+    color:#3D3D3D
+}
+.colorsecondary50 {
+    color:#525252
 }
 .finter {
     font-family: 'Inter';
@@ -90,6 +110,21 @@ margin-top: auto;
 .btn_contact {
     background-color: #EA4235!important;
 }
+.description_blog {
+    /* white-space: break-spaces; */
+    text-overflow:ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp:5;
+    height: 83px;
+}
+.f53 {
+    font-size: 53.41px;
+line-height: 80px;
+}
+.fw600 {
+    font-weight: 600;
+}
+
 @media only screen and (min-width: 768px) {
     .mt64 {
         margin-top: 64px;

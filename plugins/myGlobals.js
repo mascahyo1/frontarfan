@@ -7,4 +7,10 @@ export default (context, inject) => {
     inject('baseurl', baseurl);
     inject('imageurl', imageurl);
     inject('publictoken', publictoken);
+    inject('datearfan', (date) => {
+      date = new Date(date);
+      let month = ['January', 'Februari', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      return date.getDate() + ' ' + month[date.getMonth()] + ' ' + date.getFullYear();
+    });
+
   };
