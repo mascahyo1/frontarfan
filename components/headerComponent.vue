@@ -15,10 +15,10 @@
                     </ul>
                     <ul class="navbar-nav ">
                         <li class="nav-item">
-                            <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/#about_us">Home</nuxt-link>
+                            <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/">Home</nuxt-link>
                         </li>
                         <li class="nav-item">
-                            <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/#about_us">Work</nuxt-link>
+                            <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/work">Work</nuxt-link>
                         </li>
                         <li class="nav-item">
                             <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/#dota2">Project</nuxt-link>

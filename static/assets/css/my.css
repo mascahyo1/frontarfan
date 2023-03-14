@@ -29,6 +29,11 @@ margin-top: auto;
     color: #EA4235;
 
 }
+
+.f42 {
+    font-size: 42.72px;
+    line-height: 64px;
+}
 .fdarkprimary {
     color:#2F3239;
 }
@@ -85,6 +90,11 @@ line-height: 14px;
 .colorsecondary50 {
     color:#525252
 }
+.nobullet {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 .finter {
     font-family: 'Inter';
     font-style: normal;
@@ -116,6 +126,10 @@ line-height: 14px;
     overflow: hidden;
     -webkit-line-clamp:5;
     height: 83px;
+}
+.f21 {
+    font-size: 21.88px;
+line-height: 33px;
 }
 .f53 {
     font-size: 53.41px;

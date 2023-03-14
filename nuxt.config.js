@@ -8,6 +8,23 @@ export default {
     htmlAttrs: {
       lang: 'en'
     },
+    routes: [
+      {
+        path: '/work',
+        component: 'components/user/index.vue',
+        children:[
+          {
+            path: ':category_id/:work_id',
+            component: 'components/work/detail.vue'
+          },
+          {
+            path: ':category_id',
+            component: 'components/user/category.vue'
+          },
+
+        ]
+      },
+    ],
     // router: {
     //   middleware: ['authenticated', 'notauthenticated']
     // },

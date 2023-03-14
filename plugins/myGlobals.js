@@ -12,5 +12,10 @@ export default (context, inject) => {
       let month = ['January', 'Februari', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
       return date.getDate() + ' ' + month[date.getMonth()] + ' ' + date.getFullYear();
     });
+    inject('montharfan', (date) => {
+      date = new Date(date);
+      let month = ['January', 'Februari', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      return month[date.getMonth()] + ' ' + date.getFullYear();
+    });
 
   };
