@@ -5,10 +5,7 @@
                 <div class="container">
                     
         
-                    <nuxt-link class="navbar-brand bg-danger m-0 d-block d-md-none" to="/#" ><img src="/assets/img/logo.png" class="img-fluid "></nuxt-link>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                    <nuxt-link class="navbar-brand bg-danger m-0 mx-auto d-block d-md-none" to="/#" ><img src="/assets/img/logo.png" class="img-fluid d-block mx-auto"></nuxt-link>
                     <div class="collapse navbar-collapse" id="mynavbar">
                     <ul class="ms-auto">
 
@@ -21,7 +18,7 @@
                             <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/work">Work</nuxt-link>
                         </li>
                         <li class="nav-item">
-                            <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/#dota2">Project</nuxt-link>
+                            <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/project">Project</nuxt-link>
                         </li>
                     </ul>
                     <nuxt-link class="navbar-brand   d-none d-md-block" to="/#" ><img src="/assets/img/logo.png" class="img-fluid "></nuxt-link>
@@ -30,7 +27,7 @@
                             <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/blog">Blog</nuxt-link>
                         </li>
                         <li class="nav-item">
-                            <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/#about_us">About</nuxt-link>
+                            <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/about">About</nuxt-link>
                         </li>
                         <li class="nav-item">
                             <nuxt-link class="nav-link f14 finter px-0 px-md-5" to="/contact">Contact</nuxt-link>

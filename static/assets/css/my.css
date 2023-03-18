@@ -29,13 +29,18 @@ margin-top: auto;
     color: #EA4235;
 
 }
-
+.bgred {
+    background: #EA4235!important;
+}
 .f42 {
     font-size: 42.72px;
     line-height: 64px;
 }
 .fdarkprimary {
     color:#2F3239;
+}
+.fsecondary200 {
+    color: #212121;
 }
 .f66 {
     font-family: 'Poppins';
@@ -83,6 +88,11 @@ line-height: 14px;
 }
 .colorgrey {
     color: #626262;
+}
+.container_img_about {
+    /* padding: 10px; */
+    border: 10px solid #EA4235;
+    border-radius: 100%;
 }
 .colorsecondary {
     color:#3D3D3D
@@ -138,9 +148,55 @@ line-height: 80px;
 .fw600 {
     font-weight: 600;
 }
-
+.slick-arrow {
+    background-color: #212121!important;
+    color: white!important;
+    border-radius: 100%;
+}
+.slick-arrow:hover {
+    background-color: #EA4235!important;
+    color: white!important;
+}
+.slick-prev:before {
+    content: "\f060"!important;
+    color: white!important;
+    opacity: 1!important;
+    display: block!important;
+  font-family: "Font Awesome 6 Free"!important;
+    
+  font: var(--fa-font-solid);
+  }
+  
+  .slick-next:before {
+    content: "\f061"!important;
+    color: white!important;
+    opacity: 1!important;
+    display: block!important;
+  font-family: "Font Awesome 6 Free"!important;
+    
+  font: var(--fa-font-solid);
+  }
 @media only screen and (min-width: 768px) {
     .mt64 {
         margin-top: 64px;
+    }
+}
+
+
+@media only screen and (max-width: 991px) {
+}
+
+@media only screen and (max-width: 767px) {
+}
+@media only screen and (max-width: 575px) {
+    .navbar-brand img {
+        width: 49.9px;
+    }
+    .navbar-brand {
+        padding-top: 7.02px!important;
+        padding-left: 9.36px;
+        padding-right: 9.75px;
+        padding-bottom: 7.41px!important;
+        border-radius: 0px 0px 16px 16px;
     }
 }
