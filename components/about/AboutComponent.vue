@@ -28,16 +28,26 @@
                 <div class="mb-5 text-center fw700 f27 fpoppins">
                     Work Experience
                 </div>
-                <VueSlickCarousel v-bind="settings" class="mb-5" >
+                <VueSlickCarousel v-if="workData.length"  v-bind="settings" class="mb-5">
                     <div v-for="w in workData">
                         
-                        <nuxt-link :to="{name:'work-detail-id', params:{id:w.id}}">
+                        <nuxt-link :to="{name:'certificate-id', params:{id:w.id}}">
                             <img :src="baseUrl+w.attributes.image.data.attributes.url" class="img-fluid d-block mx-auto">
                         </nuxt-link>
                     </div>
-                </VueSlickCarousel >
+                </VueSlickCarousel>
                 <div class="mb-5 text-center fw700 f27 fpoppins">
                     Certifications
+                    {{ cetificate }}
+                </div>
+                <div class="row mb-5 justify-content-center">
+                    <div class="col-md-4 mb-5" v-if="certificateData.length" v-for="(c,index) in certificateData">
+                        <nuxt-link :to="{name:'certificate-id', params:{id:c.id}}">
+                            <div>
+                                <img v-if="c.attributes.image.data" :src="baseUrl+c.attributes.image.data.attributes.url" :class="{'img-fluid d-block mx-auto':1,'mt64': index % 3 != 1}">
+                            </div>
+                        </nuxt-link>
+                    </div>
                 </div>
                 
             </div>
@@ -58,7 +68,7 @@
                 baseUrl: this.$imageurl,
                 responseData: {},
                 workData: [],
-                certificate: [],
+                certificateData: [],
                 settings: {
                     
                     "dots": false,
@@ -89,6 +99,13 @@
                 }})
                 .then((response) => {
                     this.workData = response.data.data
+                })
+                this.$axios.get('certifications',{params:{
+                  'populate': '*',  
+                  'pagination[limit]': 1000
+                }})
+                .then((response) => {
+                    this.certificateData = response.data.data
                 })
             }
         }
