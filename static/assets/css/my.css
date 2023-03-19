@@ -94,6 +94,10 @@ line-height: 14px;
     border: 10px solid #EA4235;
     border-radius: 100%;
 }
+.img_cat_work {
+    border-radius: 100%;
+    background-color: #EA4235;
+}
 .colorsecondary {
     color:#3D3D3D
 }

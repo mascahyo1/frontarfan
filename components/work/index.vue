@@ -1,24 +1,50 @@
 <template>
     <div>
         <div class="container my-5 py-5">
-            <div class="text-center mb-1 f17 fpoppins colorsecondary50">
-                MY WORK
+            <div v-if="activeCategory == -1">
+                <div class="text-center mb-1 f17 fpoppins colorsecondary50">
+                    MY WORK
+                </div>
+                <div class="text-center mb-5 f42 fw600 fpoppins">
+                    <span class="fdarkprimary">Featured</span> 
+                    <span class="fred">Project</span>
+                </div>
             </div>
-            <div class="text-center mb-5 f42 fw600 fpoppins">
-                <span class="fdarkprimary">Featured</span> 
-                <span class="fred">Project</span>
+            <div v-else>
+                <div class="row justify-content-center mb-5">
+                    <div class="col-auto  my-auto">
+                        <div class="mb-3">
+                            <img v-if="imgUrl" :src="baseUrl+imgUrl" class="img-fluid d-block mx-auto img_cat_work">
+                        </div>
+                    </div>
+                    <div class="col-md-3 my-auto">
+                        <div class="mb-3 finter f11 colorsecondary mb-1">
+                            <div>
+                               Projects in
+                            </div>
+                            <div class="f34 fw700 fdarkprimary mb-1">
+                                {{ CategoryName }}
+                            </div>
+                            <div class="colorsecondary f14 finter">
+                                {{ CategoryDesc }}
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
             <div class="mb-5">
                 
                 <VueSlickCarousel v-if="workCategory.length"  v-bind="settings" class="mb-5 nav nav-tabs">
                     <div>
                         <li class="nav-item">
-                            <a :class="{'nav-link':1, 'active':activeCategory == 'all' }" @click="changeCategory('all')">All</a>
+                            <a :class="{'nav-link':1, 'active':activeCategory == '-1' }" @click="changeCategory('-1')">All</a>
                         </li>
                     </div>
                     <div v-for="(w,index) in workCategory">
                         <li class="nav-item">
-                            <a :class="{'nav-link':1, 'active':activeCategory == w.attributes.name }" @click="changeCategory(w.attributes.name)"> {{ w.attributes.name }}</a>
+                            <a :class="{'nav-link':1, 'active':activeCategory == index }" @click="changeCategory(index)"> {{ w.attributes.name }}</a>
                         </li>
                     </div>
                 </VueSlickCarousel>
@@ -52,11 +78,15 @@ export default {
     },
     data() {
             return {
+                baseUrl: this.$imageurl,
                 apiUrl: 'works',
                 httpMethod: 'GET',
+                imgUrl: '',
                 responseData: [],
                 workCategory:[],
-                activeCategory:'all',
+                CategoryName: '',
+                CategoryDesc: '',
+                activeCategory:'-1',
                 start: 0,
                 paginationLimit: 9,
                 total: 9,
@@ -79,7 +109,7 @@ export default {
                 
             // try {
                 let params={"populate":'*', 'pagination[limit]': this.paginationLimit, 'pagination[start]': this.start}
-                if(this.activeCategory != 'all') {
+                if(this.activeCategory != '-1') {
                     params = {"populate":'*', 'pagination[limit]': this.paginationLimit, 'pagination[start]': this.start, 'filters[$and][0][work_category][name][$eq]:': this.activeCategory}
                 }
                 this.$axios.$request({
@@ -116,6 +146,13 @@ export default {
                     this.start = 0
                     this.activeCategory = category
                     this.getData()
+                    if(category != -1) {
+                        this.CategoryName = this.workCategory[category].attributes.name
+                        this.CategoryDesc = this.workCategory[category].attributes.description
+                        if(this.workCategory[category].attributes.image.data)
+                        this.imgUrl = this.workCategory[category].attributes.image.data.attributes.url
+                        
+                    }
                 }
     },
         
