@@ -148,14 +148,14 @@ export default {
         },
         methods: {
 
-            getData() {
+            async getData() {
                 this.spinner = true
             // try {
                 let params={"populate":'*', 'pagination[limit]': this.paginationLimit, 'pagination[start]': this.start}
                 if(this.activeCategory != '-1') {
                     params = {"populate":'*', 'pagination[limit]': this.paginationLimit, 'pagination[start]': this.start, 'filters[$and][0][work_category][name][$eq]:': this.CategoryName}
                 }
-                this.$axios.$request({
+                await this.$axios.$request({
                         url: 'work-categories',
                         method: this.httpMethod,
                         // headers: {'Authorization': 'Bearer ' + this.$publictoken, 'Content-Type': 'application/json'},
@@ -163,7 +163,7 @@ export default {
                     }).then((response) => {
                         this.workCategory = response.data
                     })
-                this.$axios.$request({
+                await this.$axios.$request({
                     url: this.apiUrl,
                     method: this.httpMethod,
                     // headers: {'Authorization': 'Bearer ' + this.$publictoken, 'Content-Type': 'application/json'},

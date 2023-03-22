@@ -20,6 +20,7 @@
                             </div>
                             
                         </div>
+
                         <div class="col-md-6 mb-3">
                             <img  v-if="r.attributes.image.data" :src="baseUrl + r.attributes.image.data.attributes.url" class="img-fluid d-block mx-auto mb-5">
                             <div class="row">
@@ -52,7 +53,9 @@
                     </div>
                 </div>
             </div>
-            
+            <div v-if="spinner" class="mb-5">
+                <spinnerComponent/>
+            </div>
             <div class="text-center" v-if="total > start">
                 <button @click="getProject()" class="btn text-center">Load More</button>
             </div>
@@ -67,6 +70,7 @@
         },
         data() {
             return {
+                spinner: true,
                 baseUrl: this.$imageurl,
                 paginationLimit: 5,
                 start: 0,
@@ -75,8 +79,9 @@
             }
         },
         methods: {
-            getProject() {
-                this.$axios.get('works',{params:{
+            async getProject() {
+                this.spinner = true;
+                await this.$axios.get('works',{params:{
                     "populate": '*', 
                     'sort[0]': 'id:desc',
                     'pagination[limit]': this.limitPagination, 
@@ -92,6 +97,7 @@
                     .catch((error) => {
                         console.log(error)
                     })
+                this.spinner = false;
             }
         },
     }

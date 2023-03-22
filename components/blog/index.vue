@@ -33,6 +33,9 @@
                 </div>
             </div>
             <div>
+            <div v-if="spinner" class="mb-5">
+                <spinnerComponent/>
+            </div>
             <div class="text-center" v-if="total > start">
                 <button @click="getBlog()" class="btn text-center">Load More</button>
             </div>
@@ -49,6 +52,7 @@ export default {
     },
     data() {
         return {
+            spinner:true,
             blog: [],
             baseUrl: this.$imageurl,
             start: 0,
@@ -60,8 +64,9 @@ export default {
         this.getBlog();
     },
     methods: {
-        getBlog() {
-            this.$axios.get('blogs', {params:{"populate":'*', 'pagination[limit]': 5, 'pagination[start]': this.start}})
+        async getBlog() {
+            this.spinner = true;
+            await this.$axios.get('blogs', {params:{"populate":'*', 'pagination[limit]': 5, 'pagination[start]': this.start}})
                 .then((response) => {
                     this.blog = this.blog.concat(response.data.data);
                     this.start = this.start + this.paginationLimit;
@@ -70,6 +75,7 @@ export default {
                 .catch((error) => {
                     console.log(error);
                 });
+            this.spinner = false;
         },
     }
 
