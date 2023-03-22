@@ -44,12 +44,11 @@
 </template>
 
 <script>
-import { mapGetters  } from 'vuex';
 
 export default {
   name: 'headerComponent',
   computed: {
-    ...mapGetters('auth', ['isLoggedIn', 'isUser', 'isToken'])
+    // ...mapGetters('auth', ['isLoggedIn', 'isUser', 'isToken'])
 
   },
   mounted() {
