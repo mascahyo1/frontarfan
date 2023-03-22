@@ -1,6 +1,6 @@
 <template>
     <div>
-      <AboutHomeVue />
+      <AboutHome />
       <workHome />
     </div>
   </template>

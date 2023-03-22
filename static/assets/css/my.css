@@ -17,7 +17,9 @@
     flex-direction: column;
     
 }
-
+.nav-link.active i {
+    color: #EA4235;
+}
 .footer_sosmed {
     font-size: 29px;
 }
@@ -29,15 +31,25 @@ margin-top: auto;
     color: #EA4235;
 
 }
+.bg_footer_mobile {
+    background: #212121;
+    border-radius: 20px 20px 0px 0px;
+}
 .bgred {
     background: #EA4235!important;
+}
+.f40 {
+    font-size: 40px;
+}
+.f30 {
+    font-size: 30px;
 }
 .f42 {
     font-size: 42.72px;
     line-height: 64px;
 }
 .fdarkprimary {
-    color:#2F3239;
+    color:#2F3239!important;
 }
 .fsecondary200 {
     color: #212121;
@@ -179,6 +191,38 @@ line-height: 80px;
   font-family: "Font Awesome 6 Free"!important;
     
   font: var(--fa-font-solid);
+  }
+  .nav-link {
+    border:none;
+    transition: 0.3s ease-in-out;
+  }
+  .nav-link.active:after{
+    width: 100%;
+  }
+  .nav-link.active {
+    border:none!important;
+    color: #EA4235!important;
+  }
+  .nav-link::after {
+    margin:auto;
+    margin-top: 7px;
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #EA4235;
+    transition: width 0.3s;
+  }
+  .nav-link:hover, .nav-link:focus, .nav-link:focus-visible, .nav-link:focus-within, .nav-link:active {
+    border:none!important;
+    color: #EA4235!important;
+  }
+  .nav-tabs {
+    border:none!important
+  }
+  .nav-link:hover::after {
+    width: 100%;
+    transition: width 0.3s;
   }
 @media only screen and (min-width: 768px) {
     .mt64 {

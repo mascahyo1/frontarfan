@@ -31,8 +31,17 @@
                 <VueSlickCarousel v-if="workData.length"  v-bind="settings" class="mb-5">
                     <div v-for="w in workData">
                         
-                        <nuxt-link :to="{name:'certificate-id', params:{id:w.id}}">
-                            <img :src="baseUrl+w.attributes.image.data.attributes.url" class="img-fluid d-block mx-auto">
+                        <nuxt-link :to="{name:'work-detail-id', params:{id:w.id}}">
+                            
+                            <div v-if="w.attributes.type == 'video'">
+                                <div v-if="w.attributes.youtube_id">
+                                    <img :src="'https://img.youtube.com/vi/'+w.attributes.youtube_id+'/mqdefault.jpg'" :class="{'d-block mx-auto rounded-3 img-fluid': 1}">
+                                </div>
+
+                            </div>
+                            <div v-else>
+                                <img :src="baseUrl+w.attributes.image.data.attributes.url" class="img-fluid d-block mx-auto">
+                            </div>
                         </nuxt-link>
                     </div>
                 </VueSlickCarousel>

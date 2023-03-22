@@ -1,63 +1,68 @@
 <template>
     <div>
         <div class="container my-5 py-5">
-            <div v-if="activeCategory == -1">
-                <div class="text-center mb-1 f17 fpoppins colorsecondary50">
-                    MY WORK
-                </div>
-                <div class="text-center mb-5 f42 fw600 fpoppins">
-                    <span class="fdarkprimary">Featured</span> 
-                    <span class="fred">Project</span>
-                </div>
+            <div v-if="spinner">
+                <spinnerComponent/>
             </div>
             <div v-else>
-                <div class="row justify-content-center mb-5">
-                    <div class="col-auto  my-auto">
-                        <div class="mb-3">
-                            <img v-if="imgUrl" :src="baseUrl+imgUrl" class="img-fluid d-block mx-auto img_cat_work">
-                        </div>
+                <div v-if="activeCategory == -1">
+                    <div class="text-center mb-1 f17 fpoppins colorsecondary50">
+                        MY WORK
                     </div>
-                    <div class="col-md-3 my-auto">
-                        <div class="mb-3 finter f11 colorsecondary mb-1">
-                            <div>
-                               Projects in
-                            </div>
-                            <div class="f34 fw700 fdarkprimary mb-1">
-                                {{ CategoryName }}
-                            </div>
-                            <div class="colorsecondary f14 finter">
-                                {{ CategoryDesc }}
-
-                            </div>
-                        </div>
-                        
+                    <div class="text-center mb-5 f42 fw600 fpoppins">
+                        <span class="fdarkprimary">Featured</span> 
+                        <span class="fred">Project</span>
                     </div>
                 </div>
-            </div>
-            <div class="mb-5">
-                
-                <VueSlickCarousel v-if="workCategory.length"  v-bind="settings" class="mb-5 nav nav-tabs">
-                    <div>
-                        <li class="nav-item">
-                            <a :class="{'nav-link':1, 'active':activeCategory == '-1' }" @click="changeCategory('-1')">All</a>
-                        </li>
+                <div v-else>
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-auto  my-auto">
+                            <div class="mb-3">
+                                <img v-if="imgUrl" :src="baseUrl+imgUrl" class="img-fluid d-block mx-auto img_cat_work">
+                            </div>
+                        </div>
+                        <div class="col-md-9 my-auto">
+                            <div class="mb-3 finter f11 colorsecondary mb-1">
+                                <div>
+                                Projects in
+                                </div>
+                                <div class="f34 fw700 fdarkprimary mb-1">
+                                    {{ CategoryName }}
+                                </div>
+                                <div class="colorsecondary f14 finter">
+                                    {{ CategoryDesc }}
+
+                                </div>
+                            </div>
+                            
+                        </div>
                     </div>
-                    <div v-for="(w,index) in workCategory">
-                        <li class="nav-item">
-                            <a :class="{'nav-link':1, 'active':activeCategory == index }" @click="changeCategory(index)"> {{ w.attributes.name }}</a>
-                        </li>
-                    </div>
-                </VueSlickCarousel>
-            </div>
-            <div class="mb-5">
-                
-                <workCard2 :data="responseData" />
-            </div>
+                </div>
+                <div class="mb-5">
+                    
+                    <VueSlickCarousel v-if="workCategory.length"  v-bind="settings" class="mb-5 nav nav-tabs">
+                        <div>
+                            <li class="nav-item">
+                                <a :class="{'nav-link text-center fdarkprimary fpoppins f17':1, 'active':activeCategory == '-1' }" @click="changeCategory('-1')">All</a>
+                            </li>
+                        </div>
+                        <div v-for="(w,index) in workCategory">
+                            <li class="nav-item">
+                                <a :class="{'nav-link text-center fdarkprimary fpoppins f17':1, 'active':activeCategory == index }" @click="changeCategory(index)"> {{ w.attributes.name }}</a>
+                            </li>
+                        </div>
+                    </VueSlickCarousel>
+                </div>
+                <div class="mb-5">
+                    
+                    <workCard2 :data="responseData" />
+                </div>
 
 
 
-            <div class="text-center" v-if="total > start">
-                <button @click="getData()" class="btn text-center">Load More</button>
+                <div class="text-center" v-if="total > start">
+                    <button @click="getData()" class="btn text-center">Load More</button>
+                </div>
             </div>
         </div>
     </div>
@@ -78,6 +83,7 @@ export default {
     },
     data() {
             return {
+                spinner:true,
                 baseUrl: this.$imageurl,
                 apiUrl: 'works',
                 httpMethod: 'GET',
@@ -90,27 +96,64 @@ export default {
                 start: 0,
                 paginationLimit: 9,
                 total: 9,
+
                 settings: {
                     
                     "dots": false,
                     "arrows": true,
-                    "dotsClass": "slick-dots custom-dot-class",
-                    "edgeFriction": 0.35,
                     "infinite": false,
                     "speed": 500,
-                    "slidesToShow": 3,
-                    "slidesToScroll": 1
+                    // variableWidth: true,
+                    // variableHeight: true,
+                    mobileFirst: true,
+                            slidesToShow: 6,
+                            slidesToScroll: 6,
+
+                    responsive: [
+                        {
+                            breakpoint: 1200,
+                            settings: {
+                                slidesToShow: 5,
+                                slidesToScroll: 5,
+                            },
+                        },
+                        {
+                            breakpoint: 992,
+                            settings: {
+                                slidesToShow: 4,
+                                slidesToScroll: 4,
+                            },
+                        },
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 3,
+                            },
+                        },
+                        {
+                            breakpoint: 576,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                            },
+                        },
+                        // You can unslick at a given breakpoint now by adding:
+                        // settings: "unslick"
+                        // instead of a settings object
+                    ]
+
                 }
             }
         },
         methods: {
 
             getData() {
-                
+                this.spinner = true
             // try {
                 let params={"populate":'*', 'pagination[limit]': this.paginationLimit, 'pagination[start]': this.start}
                 if(this.activeCategory != '-1') {
-                    params = {"populate":'*', 'pagination[limit]': this.paginationLimit, 'pagination[start]': this.start, 'filters[$and][0][work_category][name][$eq]:': this.activeCategory}
+                    params = {"populate":'*', 'pagination[limit]': this.paginationLimit, 'pagination[start]': this.start, 'filters[$and][0][work_category][name][$eq]:': this.CategoryName}
                 }
                 this.$axios.$request({
                         url: 'work-categories',
@@ -131,7 +174,7 @@ export default {
                     this.total = response.meta.pagination.total;
                 })
 
-
+                this.spinner = false
                
             // } catch (error) {
                 
@@ -145,7 +188,6 @@ export default {
                     this.responseData = []
                     this.start = 0
                     this.activeCategory = category
-                    this.getData()
                     if(category != -1) {
                         this.CategoryName = this.workCategory[category].attributes.name
                         this.CategoryDesc = this.workCategory[category].attributes.description
@@ -153,6 +195,7 @@ export default {
                         this.imgUrl = this.workCategory[category].attributes.image.data.attributes.url
                         
                     }
+                    this.getData()
                 }
     },
         

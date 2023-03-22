@@ -2,7 +2,13 @@
     <div>
         <div class="container my-5 py-5">
             <div class="workhomecontainer">
-                <workCard :data="responseData" />
+                <div v-if="spinner">
+                    
+                        <spinnerComponent/>
+                </div>
+                <div v-else>
+                    <workCard :data="responseData" />
+                </div>
             </div>
         </div>
     </div>
@@ -17,6 +23,7 @@
         },
         data() {
             return {
+                spinner:true,
                 apiUrl: 'works',
                 httpMethod: 'GET',
                 responseData: null,
@@ -32,9 +39,9 @@
         methods: {
 
             async getData() {
-
+            this.spinner = true
             try {
-                const response = await this.$axios.$request({
+                let response = await this.$axios.$request({
                     url: this.apiUrl,
                     method: this.httpMethod,
                     // headers: {'Authorization': 'Bearer ' + this.$publictoken, 'Content-Type': 'application/json'},
@@ -52,6 +59,7 @@
                 this.error = error
                 console.log(error)
                 }
+            this.spinner = false
             }
         },
         
