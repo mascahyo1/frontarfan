@@ -1,7 +1,9 @@
 <template>
-    <div class="body">
+    <div class="">
+      <div class="body">
+
         <headerComponent/>
-        <main>
+        <main class="main">
           <!-- <div class="fwa-spinner" v-if="isLoading">
             <div class="spinner-border text-primary" style="width: 4rem; height: 4rem;" role="status">
               <span class="visually-hidden">Loading...</span>
@@ -9,6 +11,7 @@
           </div> -->
             <nuxt />
         </main>
+      </div>
         <Footer/>
     </div>
   </template>

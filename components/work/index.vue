@@ -42,13 +42,13 @@
                     
                     <VueSlickCarousel v-if="workCategory.length"  v-bind="settings" class="mb-5 nav nav-tabs">
                         <div>
-                            <li class="nav-item">
-                                <a :class="{'nav-link text-center fdarkprimary fpoppins f17':1, 'active':activeCategory == '-1' }" @click="changeCategory('-1')">All</a>
+                            <li class="nav-item border-0">
+                                <nuxt-link :class="{'nav-link border-0 text-center fdarkprimary fpoppins f17':1, 'active':activeCategory == '-1' }" :to="{name:'work'}">All</nuxt-link>
                             </li>
                         </div>
                         <div v-for="(w,index) in workCategory">
-                            <li class="nav-item">
-                                <a :class="{'nav-link text-center fdarkprimary fpoppins f17':1, 'active':activeCategory == index }" @click="changeCategory(index)"> {{ w.attributes.name }}</a>
+                            <li class="nav-item border-0">
+                                <nuxt-link :class="{'nav-link border-0 text-center fdarkprimary fpoppins f17':1, 'active':activeCategory == w.id }" :to="{name:'work-category-id', params:{id:w.id}}">  {{ w.attributes.name }}</nuxt-link>
                             </li>
                         </div>
                     </VueSlickCarousel>
@@ -92,7 +92,7 @@ export default {
                 workCategory:[],
                 CategoryName: '',
                 CategoryDesc: '',
-                activeCategory:'-1',
+                activeCategory: this.$route.params.id != null ? this.$route.params.id : -1,
                 start: 0,
                 paginationLimit: 9,
                 total: 9,
@@ -199,7 +199,25 @@ export default {
                 }
     },
         
-        mounted() {
+        async mounted() {
+            await this.getData()
+            let category = this.$route.params.id != null ? this.$route.params.id : -1
+            console.log(category)
+                    this.responseData = []
+                    this.start = 0
+                    if(category != -1) {
+                        for(let i=0; i<this.workCategory.length; i++) {
+                            if(this.workCategory[i].id == category) {
+                                category = i
+                                break
+                            }
+                        }
+                        this.CategoryName = this.workCategory[category].attributes.name
+                        this.CategoryDesc = this.workCategory[category].attributes.description
+                        if(this.workCategory[category].attributes.image.data)
+                        this.imgUrl = this.workCategory[category].attributes.image.data.attributes.url
+                        
+                    }
             this.getData()
         }
 }

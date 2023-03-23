@@ -9,6 +9,16 @@
                 <div class="" v-if="work.attributes">
                     <div class="row">
                         <div class="col-md-4 mb-3">
+                            <div class="mb-1">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><nuxt-link to="/" class="colorgrey finter f11">Home</nuxt-link></li>
+                                        <li class="breadcrumb-item"><nuxt-link to="/work"  class="colorgrey finter f11">Work</nuxt-link></li>
+                                        <li class="breadcrumb-item" v-if="work.attributes.work_category.data" ><nuxt-link  class="colorgrey finter f11" :to="{name:'work-category-id', params:{id:work.attributes.work_category.data.id}}">{{work.attributes.work_category.data.attributes.name}}</nuxt-link></li>
+                                        <li class="breadcrumb-item active " aria-current="page"><nuxt-link to="#" class="colorgrey finter f11">{{ work.attributes.title }}</nuxt-link></li>
+                                    </ol>
+                                </nav>
+                            </div>
                             <div class="f34 fpoppins fw700 mb-4 fdarkprimary">
                                 {{ work.attributes.title }}
                             </div>
