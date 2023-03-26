@@ -22,7 +22,12 @@
                         </div>
 
                         <div class="col-md-6 mb-3">
-                            <img  v-if="r.attributes.image.data" :src="baseUrl + r.attributes.image.data.attributes.url" class="img-fluid d-block mx-auto mb-5">
+                            <div v-if="r.attributes.type == 'video'">
+                                <iframe :src="'https://www.youtube.com/embed/'+r.attributes.youtube_id+'?autoplay=0&cc_load_policy=1&mute=0&loop=1&playlist='+r.attributes.youtube_id+'&controls=1&showinfo=0'" width="100%" height="300px" allow="fullscreen;"></iframe>
+                            </div>
+                            <div v-else>
+                                <img  v-if="r.attributes.image.data" :src="baseUrl + r.attributes.image.data.attributes.url" class="img-fluid d-block mx-auto bd16 mb-5">
+                            </div>
                             <div class="row">
                             <div class="col-md-4 mb-3 ">
                                 <div class="mb-3">

@@ -10,7 +10,7 @@
                 <div class="text-center mb-5 fw600 f53 fpoppins ">
                     {{ certificate.attributes.name }}
                 </div>
-                <img v-if="certificate.attributes.image.data" :src="baseUrl + certificate.attributes.image.data.attributes.url" class="img-fluid d-block mx-auto mb-5">
+                <img v-if="certificate.attributes.image.data" :src="baseUrl + certificate.attributes.image.data.attributes.url" class="bd16 img-fluid d-block mx-auto mb-5">
                 <div class="f14 finter colorsecondary">
                     {{ certificate.attributes.description }}
                 </div>

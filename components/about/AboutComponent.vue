@@ -34,23 +34,28 @@
                     <div class="mb-5 text-center fw700 f27 fpoppins">
                         Work Experience
                     </div>
-                    <VueSlickCarousel v-if="workData.length"  v-bind="settings" class="mb-5">
-                        <div v-for="w in workData">
-                            
-                            <nuxt-link :to="{name:'work-detail-id', params:{id:w.id}}">
+                    <div class="px-3 px-md-0">
+                        <VueSlickCarousel v-if="workData.length"  v-bind="settings" class="mb-5">
+                            <div v-for="w in workData">
                                 
-                                <div v-if="w.attributes.type == 'video'">
-                                    <div v-if="w.attributes.youtube_id">
-                                        <img :src="'https://img.youtube.com/vi/'+w.attributes.youtube_id+'/mqdefault.jpg'" :class="{'d-block mx-auto rounded-3 img-fluid': 1}">
-                                    </div>
+                                <nuxt-link :to="{name:'work-detail-id', params:{id:w.id}}">
+                                    <div class="px-4">
 
-                                </div>
-                                <div v-else>
-                                    <img :src="baseUrl+w.attributes.image.data.attributes.url" class="img-fluid d-block mx-auto">
-                                </div>
-                            </nuxt-link>
-                        </div>
-                    </VueSlickCarousel>
+                                        <div v-if="w.attributes.type == 'video'">
+                                        <div v-if="w.attributes.youtube_id">
+                                            <img :src="'https://img.youtube.com/vi/'+w.attributes.youtube_id+'/mqdefault.jpg'" :class="{'d-block mx-auto rounded-3 img-fluid bd16 imggrid': 1}">
+                                        </div>
+
+                                    </div>
+                                    <div v-else>
+                                        <img :src="baseUrl+w.attributes.image.data.attributes.url" class="img-fluid d-block mx-auto bd16 imggrid">
+                                    </div>
+                                    </div>
+                                </nuxt-link>
+                            </div>
+                        </VueSlickCarousel>
+
+                    </div>
                     <div class="mb-5 text-center fw700 f27 fpoppins">
                         Certifications
                         {{ cetificate }}
@@ -59,7 +64,7 @@
                         <div class="col-md-4 mb-5" v-if="certificateData.length" v-for="(c,index) in certificateData">
                             <nuxt-link :to="{name:'certificate-id', params:{id:c.id}}">
                                 <div>
-                                    <img v-if="c.attributes.image.data" :src="baseUrl+c.attributes.image.data.attributes.url" :class="{'img-fluid d-block mx-auto':1,'mt64': index % 3 != 1}">
+                                    <img v-if="c.attributes.image.data" :src="baseUrl+c.attributes.image.data.attributes.url" :class="{'img-fluid d-block mx-auto bd16 imggrid':1,'mt64': index % 3 != 1}">
                                 </div>
                             </nuxt-link>
                         </div>
@@ -90,12 +95,33 @@
                     
                     "dots": false,
                     "arrows": true,
-                    "dotsClass": "slick-dots custom-dot-class",
-                    "edgeFriction": 0.35,
                     "infinite": false,
                     "speed": 500,
                     "slidesToShow": 3,
-                    "slidesToScroll": 1
+                    "slidesToScroll": 3,
+                    responsive: [
+                        {
+                            breakpoint: 1300,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 3,
+                            }
+                        },
+                        {
+                            breakpoint: 1200,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 2
+                            }
+                        },
+                        {
+                            breakpoint: 991,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                    ]
                 }
             }
         },

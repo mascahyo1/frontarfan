@@ -8,13 +8,13 @@
 
                   <div v-if="r.attributes.type == 'video'">
                       <div v-if="r.attributes.youtube_id">
-                          <img :src="'https://img.youtube.com/vi/'+r.attributes.youtube_id+'/mqdefault.jpg'" :class="{'d-block mx-auto rounded-3 img-fluid': 1,'mt64': index % 3 != 1}">
+                          <img :src="'https://img.youtube.com/vi/'+r.attributes.youtube_id+'/mqdefault.jpg'" :class="{'d-block mx-auto rounded-3 img-fluid bd16 imggrid': 1,'mt64': index % 3 != 1}">
                       </div>
 
                   </div>
                   <div v-else>
                     <div v-if="r.attributes.image.data">
-                        <img :src="baseUrl + r.attributes.image.data.attributes.url" :class="{'d-block mx-auto rounded-3 img-fluid': 1,'mt64': index % 3 != 1 }">
+                        <img :src="baseUrl + r.attributes.image.data.attributes.url" :class="{'d-block mx-auto rounded-3 img-fluid bd16 imggrid': 1,'mt64': index % 3 != 1 }">
                     </div>
                   </div>
                 </nuxt-link>

@@ -13,7 +13,7 @@
                 <div class="text-center mb-5 fw600 f53 fpoppins ">
                     {{ blog.attributes.title }}
                 </div>
-                <img v-if="blog.attributes.image.data" :src="baseUrl + blog.attributes.image.data.attributes.url" class="img-fluid d-block mx-auto mb-5">
+                <img v-if="blog.attributes.image.data" :src="baseUrl + blog.attributes.image.data.attributes.url" class="img-fluid d-block mx-auto mb-5 bd16">
                 <div class="f14 finter colorsecondary">
                     {{ blog.attributes.description }}
                 </div>

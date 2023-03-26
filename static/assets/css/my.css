@@ -109,6 +109,9 @@ line-height: 14px;
 .colorgrey {
     color: #626262;
 }
+.bd16 {
+    border-radius: 16px;
+}
 .container_img_about {
     /* padding: 10px; */
     border: 10px solid #EA4235;
@@ -242,17 +245,41 @@ line-height: 80px;
     width: 100%;
     transition: width 0.3s;
   }
+
+  
+.imggrid {
+    width: 100%!important;
+    height: 473.05px!important;
+    object-fit: cover;
+}
+
 @media only screen and (min-width: 768px) {
     .mt64 {
         margin-top: 64px;
     }
 }
 
+@media only screen and (max-width: 1399px) {
+    .imggrid {
+        height: 404.82px!important;
+    }
+}
+@media only screen and (max-width: 1199px) {
+    .imggrid {
+        height: 335.46px!important; 
+    }
+}
 
 @media only screen and (max-width: 991px) {
+    .imggrid {
+        height: 245.62px!important;
+    }
 }
 
 @media only screen and (max-width: 767px) {
+    .imggrid {
+        height: auto!important;
+    }
 }
 @media only screen and (max-width: 575px) {
     .navbar-brand img {

@@ -7,7 +7,7 @@
                         <div class="row">
                             <div :class="{'col-md-6 my-auto order-1':1, 'order-md-2': index%2 == 1}" >
                                 <div class="mb-3">
-                                <img v-if="b.attributes.image.data" :src="baseUrl + b.attributes.image.data.attributes.url" class="img-fluid">
+                                <img v-if="b.attributes.image.data" :src="baseUrl + b.attributes.image.data.attributes.url" class="img-fluid bd16">
                                 </div>
                             </div>
                             <div :class="{'col-md-6 my-auto order-2':1, 'order-md-1': index%2 == 1 }">

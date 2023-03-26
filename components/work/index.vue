@@ -38,9 +38,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="mb-5">
+                <div class="mb-5 px-4 px-md-0">
                     
-                    <VueSlickCarousel v-if="workCategory.length"  v-bind="settings" class="mb-5 nav nav-tabs">
+                    <VueSlickCarousel v-if="workCategory.length"  v-bind="settings" class="mb-5 nav nav-tabs" ref="mySlick">
                         <div>
                             <li class="nav-item border-0">
                                 <nuxt-link :class="{'nav-link border-0 text-center fdarkprimary fpoppins f17':1, 'active':activeCategory == '-1' }" :to="{name:'work'}">All</nuxt-link>
@@ -202,7 +202,6 @@ export default {
         async mounted() {
             await this.getData()
             let category = this.$route.params.id != null ? this.$route.params.id : -1
-            console.log(category)
                     this.responseData = []
                     this.start = 0
                     if(category != -1) {
@@ -212,11 +211,14 @@ export default {
                                 break
                             }
                         }
+                        this.$refs.mySlick.goTo(category+1);
+
+                        // VueSlickCarousel.slickGoTo(category)
                         this.CategoryName = this.workCategory[category].attributes.name
                         this.CategoryDesc = this.workCategory[category].attributes.description
                         if(this.workCategory[category].attributes.image.data)
                         this.imgUrl = this.workCategory[category].attributes.image.data.attributes.url
-                        
+
                     }
             this.getData()
         }
