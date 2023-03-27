@@ -69,17 +69,17 @@
                 
                 <div class="container-fluid mt-5 px-4 px-md-0">
                     <VueSlickCarousel v-if="workSlider.length"  v-bind="settings" class="mb-5">
-                        <div v-for="w in workSlider">
+                        <div v-for="w in workSlider" class="workslider">
                             
                             <nuxt-link :to="{name:'work-detail-id', params:{id:w.id}}">
                                 <div v-if="w.attributes.type == 'video'">
                                     <div v-if="w.attributes.youtube_id">
-                                        <img :src="'https://img.youtube.com/vi/'+w.attributes.youtube_id+'/mqdefault.jpg'" :class="{'d-block mx-auto rounded-3 img-fluid bd16': 1}">
+                                        <img :src="'https://img.youtube.com/vi/'+w.attributes.youtube_id+'/mqdefault.jpg'" :class="{'imgslide bd16': 1}">
                                     </div>
 
                                 </div>
                                 <div v-else>
-                                    <img :src="baseUrl+w.attributes.image.data.attributes.url" class="img-fluid d-block mx-auto bd16">
+                                    <img :src="baseUrl+w.attributes.image.data.attributes.url" class="imgslide bd16">
                                 </div>
                             </nuxt-link>
                         </div>
@@ -106,37 +106,11 @@ import VueSlickCarousel from 'vue-slick-carousel'
                 baseUrl: this.$imageurl,
                 workSlider: [],
                 settings: {
-                    
-                    "dots": false,
-                    "arrows": true,
-                    "infinite": false,
-                    "speed": 500,
-                    // centerMode: true,
-                    "slidesToShow": 3,
-                    "slidesToScroll": 3,
-                    responsive: [
-                        {
-                            breakpoint: 1300,
-                            settings: {
-                                slidesToShow: 3,
-                                slidesToScroll: 3,
-                            }
-                        },
-                        {
-                            breakpoint: 1200,
-                            settings: {
-                                slidesToShow: 2,
-                                slidesToScroll: 2
-                            }
-                        },
-                        {
-                            breakpoint: 991,
-                            settings: {
-                                slidesToShow: 1,
-                                slidesToScroll: 1
-                            }
-                        }
-                    ]
+        dots: true,             //dots
+        infinite: true,         //loop
+        pauseOnHover: false,    //don't stop when hoverd
+        centerMode:true,        //show the slides of both side 
+        centerPadding:"20%", 
                 }
             }
         },
@@ -175,3 +149,26 @@ import VueSlickCarousel from 'vue-slick-carousel'
         }
     }
 </script>
+
+<style>
+.slider{
+    width:70%;
+    margin:0 auto;
+}
+.slider img{
+    width:100%;
+}
+.slider .slick-arrow{
+    z-index:2!important;
+}
+.slider .slick-next{
+    right:0!important;
+}
+.slider .slick-prev{
+    left:0!important;
+}
+.slick-slide{
+    padding-right: 1vw!important;
+    padding-left: 1vw!important;
+}
+</style>
