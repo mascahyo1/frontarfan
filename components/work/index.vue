@@ -151,10 +151,6 @@ export default {
             async getData() {
                 this.spinner = true
             // try {
-                let params={"populate":'*', 'pagination[limit]': this.paginationLimit, 'pagination[start]': this.start}
-                if(this.activeCategory != '-1') {
-                    params = {"populate":'*', 'pagination[limit]': this.paginationLimit, 'pagination[start]': this.start, 'filters[$and][0][work_category][name][$eq]:': this.CategoryName}
-                }
                 await this.$axios.$request({
                         url: 'work-categories',
                         method: this.httpMethod,
@@ -163,6 +159,25 @@ export default {
                     }).then((response) => {
                         this.workCategory = response.data
                     })
+                let category = await this.$route.params.id != null ? this.$route.params.id : -1
+                    if(category != -1) {
+                        for(let i=0; i<this.workCategory.length; i++) {
+                            if(this.workCategory[i].id == category) {
+                                category = i
+                                break
+                            }
+                        }
+
+                        this.CategoryName = this.workCategory[category].attributes.name
+                        this.CategoryDesc = this.workCategory[category].attributes.description
+                        if(this.workCategory[category].attributes.image.data)
+                        this.imgUrl = this.workCategory[category].attributes.image.data.attributes.url
+                    }
+                    
+                let params={"populate":'*', 'pagination[limit]': this.paginationLimit, 'pagination[start]': this.start}
+                if(this.activeCategory != '-1') {
+                    params = {"populate":'*', 'pagination[limit]': this.paginationLimit, 'pagination[start]': this.start, 'filters[$and][0][work_category][name][$eq]:': this.CategoryName}
+                }
                 await this.$axios.$request({
                     url: this.apiUrl,
                     method: this.httpMethod,
@@ -174,6 +189,10 @@ export default {
                     this.total = response.meta.pagination.total;
                 })
 
+
+                        // VueSlickCarousel.slickGoTo(category)
+
+                    
                 this.spinner = false
                
             // } catch (error) {
@@ -200,10 +219,11 @@ export default {
     },
         
         async mounted() {
-            await this.getData()
-            let category = this.$route.params.id != null ? this.$route.params.id : -1
                     this.responseData = []
                     this.start = 0
+            await this.getData()
+            let category = this.$route.params.id != null ? this.$route.params.id : -1
+            
                     if(category != -1) {
                         for(let i=0; i<this.workCategory.length; i++) {
                             if(this.workCategory[i].id == category) {
@@ -212,15 +232,8 @@ export default {
                             }
                         }
                         this.$refs.mySlick.goTo(category+1);
-
-                        // VueSlickCarousel.slickGoTo(category)
-                        this.CategoryName = this.workCategory[category].attributes.name
-                        this.CategoryDesc = this.workCategory[category].attributes.description
-                        if(this.workCategory[category].attributes.image.data)
-                        this.imgUrl = this.workCategory[category].attributes.image.data.attributes.url
-
                     }
-            this.getData()
+            // this.getData()
         }
 }
 </script>
