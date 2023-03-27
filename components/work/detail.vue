@@ -68,6 +68,7 @@
                 </div>
                 
             </div>
+        </div>
                 <div class="container-fluid mt-5 px-4 px-md-0">
                     <VueSlickCarousel v-if="workSlider.length"  v-bind="settings" class="mb-5">
                         <div v-for="w in workSlider" class="workslider">
@@ -86,7 +87,6 @@
                         </div>
                     </VueSlickCarousel>
                 </div>
-        </div>
     </div>
 </template>
 

@@ -184,6 +184,12 @@ line-height: 80px;
     background-color: #EA4235!important;
     color: white!important;
 }
+button.slick-arrow.slick-prev {
+    left: 10px!important;
+}
+button.slick-arrow.slick-next {
+    right: 10px!important;
+}
 .slick-prev:before {
     content: "\f060"!important;
     color: white!important;
