@@ -67,6 +67,7 @@
                     </div>
                 </div>
                 
+            </div>
                 <div class="container-fluid mt-5 px-4 px-md-0">
                     <VueSlickCarousel v-if="workSlider.length"  v-bind="settings" class="mb-5">
                         <div v-for="w in workSlider" class="workslider">
@@ -85,7 +86,6 @@
                         </div>
                     </VueSlickCarousel>
                 </div>
-            </div>
         </div>
     </div>
 </template>
@@ -106,7 +106,7 @@ import VueSlickCarousel from 'vue-slick-carousel'
                 baseUrl: this.$imageurl,
                 workSlider: [],
                 settings: {
-        dots: true,             //dots
+        dots: false,             //dots
         infinite: true,         //loop
         pauseOnHover: false,    //don't stop when hoverd
         centerMode:true,        //show the slides of both side 

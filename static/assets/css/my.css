@@ -258,6 +258,11 @@ line-height: 80px;
     height: 395.20px;
     object-fit: cover;
 }
+button.slick-arrow {
+    width: 48px;
+    height: 48px;
+    z-index: 10;
+}
 @media only screen and (min-width: 768px) {
     .mt64 {
         margin-top: 64px;
@@ -305,6 +310,15 @@ line-height: 80px;
         height: auto;
         object-fit: cover;
     }
+    .slick-track
+{
+    display: flex !important;
+}
+
+.slick-slide
+{
+    height: inherit !important;
+}
 }
 @media only screen and (max-width: 575px) {
     .navbar-brand img {
