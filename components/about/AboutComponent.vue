@@ -118,7 +118,9 @@
                             breakpoint: 991,
                             settings: {
                                 slidesToShow: 1,
-                                slidesToScroll: 1
+                                slidesToScroll: 1,
+                                  adaptiveHeight: true
+
                             }
                         }
                     ]

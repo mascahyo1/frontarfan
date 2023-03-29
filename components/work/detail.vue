@@ -106,11 +106,20 @@ import VueSlickCarousel from 'vue-slick-carousel'
                 baseUrl: this.$imageurl,
                 workSlider: [],
                 settings: {
-        dots: false,             //dots
-        infinite: true,         //loop
-        pauseOnHover: false,    //don't stop when hoverd
-        centerMode:true,        //show the slides of both side 
-        centerPadding:"20%", 
+                    dots: false,             //dots
+                    infinite: true,         //loop
+                    pauseOnHover: false,    //don't stop when hoverd
+                    centerMode:true,        //show the slides of both side 
+                    centerPadding:"20%", 
+                    responsive: [
+                        {
+                            breakpoint: 767,
+                            settings: {
+                                centerMode:false,        //show the slides of both side 
+                                // centerPadding:"20%", 
+                            }
+                        },
+                    ]   
                 }
             }
         },
@@ -151,10 +160,6 @@ import VueSlickCarousel from 'vue-slick-carousel'
 </script>
 
 <style>
-.slider{
-    width:70%;
-    margin:0 auto;
-}
 .slider img{
     width:100%;
 }
@@ -167,8 +172,15 @@ import VueSlickCarousel from 'vue-slick-carousel'
 .slider .slick-prev{
     left:0!important;
 }
-.slick-slide{
-    padding-right: 1vw!important;
-    padding-left: 1vw!important;
+
+@media only screen and (min-width: 768px) {
+    .slick-slide{
+        padding-right: 1vw!important;
+        padding-left: 1vw!important;
+    }
+    .slider{
+        width:70%;
+        margin:0 auto;
+    }
 }
 </style>
