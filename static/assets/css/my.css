@@ -9,7 +9,12 @@
  
  
      a:active { text-decoration: none; }
-
+     .page-enter-active, .page-leave-active {
+        transition: opacity .5s;
+      }
+      .page-enter, .page-leave-to {
+        opacity: 0;
+      }
 .body {
      
     min-height: 100vh!important;
