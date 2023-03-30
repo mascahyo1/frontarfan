@@ -34,12 +34,12 @@
                     <div class="mb-5 text-center fw700 f27 fpoppins">
                         Work Experience
                     </div>
-                    <div class="px-3 px-md-0">
+                    <div class="">
                         <VueSlickCarousel v-if="workData.length"  v-bind="settings" class="mb-5">
                             <div v-for="w in workData">
                                 
                                 <nuxt-link :to="{name:'work-detail-id', params:{id:w.id}}">
-                                    <div class="px-4">
+                                    <div class="">
 
                                         <div v-if="w.attributes.type == 'video'">
                                         <div v-if="w.attributes.youtube_id">

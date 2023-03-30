@@ -313,6 +313,9 @@ button.slick-arrow {
 }
 
 @media only screen and (max-width: 767px) {
+    .footer footer {
+        padding-bottom: 96px;
+    }
     .imggrid {
         height: 482.15px!important;
     }
