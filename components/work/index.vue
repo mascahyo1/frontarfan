@@ -38,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mb-5 px-4 px-md-0">
+                <div class="mb-5 ">
                     
                     <VueSlickCarousel v-if="workCategory.length"  v-bind="settings" class="mb-5 nav nav-tabs" ref="mySlick">
                         <div>
