@@ -14,9 +14,23 @@
                                 </nuxt-link>
                             </li>
                             <li class="nav-item">
-                                <nuxt-link to="/work" :class="{'nav-link':1, 'active':$route.path == '/work'}" >
+                                <nuxt-link to="/work" :class="{'nav-link':1, 'active':$route.path.includes('/work')}" >
                                     <div class="text-center text-white">
                                         <i class="fa fa-lightbulb f30"></i>
+                                    </div>
+                                </nuxt-link>
+                            </li>
+                            <li class="nav-item">
+                                <nuxt-link to="/project" :class="{'nav-link':1, 'active':$route.path.includes('/project')}" >
+                                    <div class="text-center text-white">
+                                        <i class="fa-solid fa-comments-dollar f30"></i>
+                                    </div>
+                                </nuxt-link>
+                            </li>
+                            <li class="nav-item">
+                                <nuxt-link to="/blog" :class="{'nav-link':1, 'active':$route.path.includes('/blog')}" >
+                                    <div class="text-center text-white">
+                                        <i class="fa fa-blog f30"></i>
                                     </div>
                                 </nuxt-link>
                             </li>

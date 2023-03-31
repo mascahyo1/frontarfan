@@ -40,7 +40,7 @@
                 </div>
                 <div class="mb-5 ">
                     
-                    <VueSlickCarousel v-if="workCategory.length"  v-bind="settings" class="mb-5 nav nav-tabs" ref="mySlick">
+                    <VueSlickCarousel v-if="workCategory.length"  v-bind="settings" class="mb-5 nav nav-tabs tabslider" ref="mySlick">
                         <div>
                             <li class="nav-item border-0">
                                 <nuxt-link :class="{'nav-link border-0 text-center fdarkprimary fpoppins f17':1, 'active':activeCategory == '-1' }" :to="{name:'work'}">All</nuxt-link>
@@ -202,20 +202,6 @@ export default {
             //     }
             // }
             },
-            
-            changeCategory(category) {
-                    this.responseData = []
-                    this.start = 0
-                    this.activeCategory = category
-                    if(category != -1) {
-                        this.CategoryName = this.workCategory[category].attributes.name
-                        this.CategoryDesc = this.workCategory[category].attributes.description
-                        if(this.workCategory[category].attributes.image.data)
-                        this.imgUrl = this.workCategory[category].attributes.image.data.attributes.url
-                        
-                    }
-                    this.getData()
-                }
     },
         
         async mounted() {

@@ -334,6 +334,13 @@ button.slick-arrow {
     height: inherit !important;
 }
 }
+.tabslider li {
+    display: block;
+    text-align: center;
+}
+.tabslider a {
+    display: inline-block;
+}
 @media only screen and (max-width: 575px) {
     .imggrid {
         height: 336.59px!important;
