@@ -5,7 +5,7 @@
                 <div class="container">
                     
         
-                    <nuxt-link class="navbar-brand bg-danger m-0 mx-auto d-block d-md-none" to="/#" ><img src="/assets/img/logo.png" class="img-fluid d-block mx-auto"></nuxt-link>
+                    <nuxt-link class="navbar-brand  m-0 mx-auto d-block d-md-none" to="/#" ><img src="/assets/img/logo.png" class="img-fluid d-block mx-auto"></nuxt-link>
                     <div class="collapse navbar-collapse" id="mynavbar">
                     <ul class="ms-auto">
 

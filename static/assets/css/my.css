@@ -1,4 +1,11 @@
-
+@font-face {
+    font-family: 'Freehouse';
+    src: url('/assets/css/font/Freehouse-Regular.woff2') format('woff2'),
+         url('/assets/css/font/Freehouse-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
      a:link { text-decoration: none; }
 
 
@@ -61,11 +68,21 @@ margin-top: auto;
     font-size: 42.72px;
     line-height: 64px;
 }
+.f64 {
+    font-size: 64px;
+    line-height: 77px;
+}
 .fdarkprimary {
     color:#2F3239!important;
 }
 .fsecondary200 {
     color: #212121;
+}
+.colorblack {
+    color: #000000;
+}
+.fw400 {
+    font-weight: 400;
 }
 .f66 {
     font-family: 'Poppins';
@@ -74,23 +91,35 @@ margin-top: auto;
     font-size: 66.76px;
 
 }
+.f32 {
+    font-size: 32px;
+    line-height: 38px;
+}
 .fw600 {
     font-weight: 600;
 }
 
 .navbar-brand {
-    background-color: #EA4235;
-    padding-top: 18px!important;
+    /* background-color: #EA4235; */
+    /* padding-top: 18px!important;
     padding-left: 24px;
     padding-right: 24px;
-    padding-bottom: 18px!important;
-    border-radius: 0px 0px 40px 40px;
-    margin:0!important
+    padding-bottom: 18px!important; */
+    /* border-radius: 0px 0px 40px 40px; */
+    /* margin:0!important */
 
+}
+
+.btncontact {
+    background-color: #FED83C!important;
+    border-radius: 16px;
 }
 .fpoppins {
     font-family: 'Poppins';
     font-style: normal;
+}
+.ffreehouse {
+    font-family: 'Freehouse';    font-style: normal;
 }
 .f34 {
     font-size: 34.18px;
@@ -106,6 +135,28 @@ margin-top: auto;
 .f14 {
     font-size: 14px;
     line-height: 17px;
+}
+.z-index-1 {
+    z-index: 1;
+}
+.z-index-2 {
+    z-index: 2;
+}
+.fnunito {
+    font-family: 'Nunito';
+    font-style: normal;
+}
+.ml-75 {
+    margin-left: -75px;
+}
+.bg312345 {
+    background-color: #312345!important;
+}
+.img_selfie {
+    position: absolute;
+}
+.hmin121 {
+    min-height: 121px;
 }
 .f11 {
     font-size: 11.2px;
@@ -224,7 +275,7 @@ button.slick-arrow.slick-next {
   }
   .nav-link.active {
     border:none!important;
-    color: #EA4235!important;
+    color: white!important;
     outline:none!important;
   }
   .nav-tabs {
@@ -240,12 +291,15 @@ button.slick-arrow.slick-next {
     display: block;
     width: 0;
     height: 3px;
-    background: #EA4235;
+    background: white;
     transition: width 0.3s;
+  }
+  a.nav-link {
+    color: white;
   }
   .nav-link:hover, .nav-link:focus, .nav-link:focus-visible, .nav-link:focus-within, .nav-link:active {
     border:none!important;
-    color: #EA4235!important;
+    color: white!important;
     outline:none!important;
   }
 
@@ -268,6 +322,10 @@ button.slick-arrow.slick-next {
     width: 100%;
     height: 395.20px;
     object-fit: cover;
+}
+body {
+    background-color: #180830 !important;
+    
 }
 button.slick-arrow {
     width: 48px;
@@ -354,10 +412,10 @@ button.slick-arrow {
         width: 49.9px;
     }
     .navbar-brand {
-        padding-top: 7.02px!important;
+        /* padding-top: 7.02px!important;
         padding-left: 9.36px;
         padding-right: 9.75px;
         padding-bottom: 7.41px!important;
-        border-radius: 0px 0px 16px 16px;
+        border-radius: 0px 0px 16px 16px; */
     }
 }
