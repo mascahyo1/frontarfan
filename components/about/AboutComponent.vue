@@ -17,7 +17,7 @@
                             </div>
                         </div>
                         <div class="col-auto my-auto">
-                            <div class="mb-3 f53 fpoppins fw600">
+                            <div class="mb-3 f53 fpoppins text-white fw600">
                                 Hi, my name is <span class="fred">Arfan</span>
                             </div>
                         </div>

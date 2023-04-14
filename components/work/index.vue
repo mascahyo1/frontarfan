@@ -6,11 +6,11 @@
             </div>
             <div v-else>
                 <div v-if="activeCategory == -1">
-                    <div class="text-center mb-1 f17 fpoppins colorsecondary50">
+                    <div class="text-center mb-1 f17 fpoppins text-white text-white">
                         MY WORK
                     </div>
                     <div class="text-center mb-5 f42 fw600 fpoppins">
-                        <span class="fdarkprimary">Featured</span> 
+                        <span class="text-white">Featured</span> 
                         <span class="fred">Project</span>
                     </div>
                 </div>
@@ -22,14 +22,14 @@
                             </div>
                         </div>
                         <div class="col-md-9 my-auto">
-                            <div class="mb-3 finter f11 colorsecondary mb-1">
+                            <div class="mb-3 finter f11 text-white mb-1">
                                 <div>
                                 Projects in
                                 </div>
-                                <div class="f34 fw700 fdarkprimary mb-1">
+                                <div class="f34 fw700 text-white mb-1">
                                     {{ CategoryName }}
                                 </div>
-                                <div class="colorsecondary f14 finter">
+                                <div class="text-white f14 finter">
                                     {{ CategoryDesc }}
 
                                 </div>
@@ -43,12 +43,12 @@
                     <VueSlickCarousel v-if="workCategory.length"  v-bind="settings" class="mb-5 nav nav-tabs tabslider" ref="mySlick">
                         <div>
                             <li class="nav-item border-0">
-                                <nuxt-link :class="{'nav-link border-0 text-center fdarkprimary fpoppins f17':1, 'active':activeCategory == '-1' }" :to="{name:'work'}">All</nuxt-link>
+                                <nuxt-link :class="{'nav-link border-0 text-center text-white fpoppins text-white f17':1, 'active':activeCategory == '-1' }" :to="{name:'work'}">All</nuxt-link>
                             </li>
                         </div>
                         <div v-for="(w,index) in workCategory">
                             <li class="nav-item border-0">
-                                <nuxt-link :class="{'nav-link border-0 text-center fdarkprimary fpoppins f17':1, 'active':activeCategory == w.id }" :to="{name:'work-category-id', params:{id:w.id}}">  {{ w.attributes.name }}</nuxt-link>
+                                <nuxt-link :class="{'nav-link border-0 text-center text-white fpoppins text-white f17':1, 'active':activeCategory == w.id }" :to="{name:'work-category-id', params:{id:w.id}}">  {{ w.attributes.name }}</nuxt-link>
                             </li>
                         </div>
                     </VueSlickCarousel>

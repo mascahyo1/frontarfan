@@ -40,7 +40,7 @@ li.nav-item:focus-visible a {
     outline:none!important;
 }
 .nav-link.active i {
-    color: #EA4235;
+    color: white;
 }
 .footer_sosmed {
     font-size: 29px;
@@ -50,7 +50,7 @@ margin-top: auto;
 /* margin-top: 30px; */
 }
 .fred {
-    color: #EA4235;
+    color: white;
 
 }
 .bg_footer_mobile {
@@ -58,7 +58,10 @@ margin-top: auto;
     border-radius: 20px 20px 0px 0px;
 }
 .bgred {
-    background: #EA4235!important;
+    background: white!important;
+}
+.nav-tabs .nav-link.active {
+    background-color: transparent!important;
 }
 .f40 {
     font-size: 40px;
@@ -137,7 +140,7 @@ margin-top: auto;
 }
 
 .navbar-brand {
-    /* background-color: #EA4235; */
+    /* background-color: white; */
     /* padding-top: 18px!important;
     padding-left: 24px;
     padding-right: 24px;
@@ -153,7 +156,7 @@ margin-top: auto;
     background-color: #FED83C!important;
     border-radius: 16px;
 }
-.fpoppins {
+.fpoppins text-white {
     font-family: 'Poppins';
     font-style: normal;
 }
@@ -239,12 +242,12 @@ line-height: 14px;
 }
 .container_img_about {
     /* padding: 10px; */
-    border: 10px solid #EA4235;
+    border: 10px solid white;
     border-radius: 100%;
 }
 .img_cat_work {
     border-radius: 100%;
-    background-color: #EA4235;
+    background-color: white;
 }
 .colorsecondary {
     color:#3D3D3D
@@ -287,7 +290,7 @@ line-height: 14px;
     margin-top: 64px;
 } */
 .btn_contact {
-    background-color: #EA4235!important;
+    background-color: white!important;
 }
 .description_blog {
     /* white-space: break-spaces; */
@@ -313,7 +316,7 @@ line-height: 80px;
     border-radius: 100%;
 }
 .slick-arrow:hover {
-    background-color: #EA4235!important;
+    background-color: white!important;
     color: white!important;
 }
 button.slick-arrow.slick-prev {

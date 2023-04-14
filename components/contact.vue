@@ -2,9 +2,9 @@
     <div>
         <div class="container my-5 py-5">
             
-            <div class="f66 fpoppins fw600 text-center mb-5">
+            <div class="f66 fpoppins text-white fw600 text-center mb-5">
                  
-                <span class="fdarkprimary">Feel free to </span> <span class="fred">contact me!</span>
+                <span class="text-white">Feel free to </span> <span class="fred">contact me!</span>
             </div>
 
             <div class="row">

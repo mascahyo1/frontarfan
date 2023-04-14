@@ -1,21 +1,21 @@
 <template>
     <div>
         <div class="container my-5 py-5">
-            <div class="text-center mb-1 f17 fpoppins colorsecondary50">
+            <div class="text-center mb-1 f17 fpoppins text-white text-white">
                 My Work
             </div>
-            <div class="f42 fpoppins fw600 text-center mb-5">
-                <span class="colorsecondary50">Ongoing</span> 
+            <div class="f42 fpoppins text-white fw600 text-center mb-5">
+                <span class="text-white">Ongoing</span> 
                 <span class="fred">Project</span>
             </div>
             <div class="row mb-5">
                 <div class="col-12 mb-5">
                     <div class="row" v-for="r in responseData">
                         <div class="col-md-6 mb-3">
-                            <div class="mb-3 colorsecondary50 fw700 f34 fpoppins">
+                            <div class="mb-3 text-white fw700 f34 fpoppins">
                                 {{ r.attributes.title }}
                             </div>
-                            <div class="colorsecondary f14 finter mb-3">
+                            <div class="text-white f14 finter mb-3">
                                 {{ r.attributes.description }}
                             </div>
                             
@@ -31,9 +31,9 @@
                             <div class="row">
                             <div class="col-md-4 mb-3 ">
                                 <div class="mb-3">
-                                    <span class="fpoppins fw700 fdarkprimary  f21">Tools</span>
+                                    <span class="fpoppins text-white fw700 text-white  f21">Tools</span>
                                     <ul class="nobullet mt-3">
-                                        <li class="colorsecondary finter f14" v-for="t in r.attributes.tools.data">
+                                        <li class="text-white finter f14" v-for="t in r.attributes.tools.data">
                                             {{t.attributes.name}}
                                         </li>   
                                     </ul>
@@ -41,15 +41,15 @@
                             </div>
                             <div class="col-md-4 mb-3 ">
                                 <div class="mb-3">
-                                    <div class="fpoppins fw700 fdarkprimary f21 mb-3">Client</div>
-                                    <div class="colorsecondary finter f14">{{ r.attributes.client }}</div>
+                                    <div class="fpoppins text-white fw700 text-white f21 mb-3">Client</div>
+                                    <div class="text-white finter f14">{{ r.attributes.client }}</div>
                                 </div>
                                 
                             </div>
                             <div class="col-md-4 mb-3 ">
                                 <div class="mb-3">
-                                    <div class="fpoppins fw700 fdarkprimary mb-3 f21">Timeframe</div>
-                                    <div class="colorsecondary finter f14">{{ $montharfan(r.attributes.start) }} - {{ $montharfan(r.attributes.finish) }}</div>
+                                    <div class="fpoppins text-white fw700 text-white mb-3 f21">Timeframe</div>
+                                    <div class="text-white finter f14">{{ $montharfan(r.attributes.start) }} - {{ $montharfan(r.attributes.finish) }}</div>
                                 </div>
                                 
                             </div>

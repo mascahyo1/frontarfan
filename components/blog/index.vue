@@ -11,18 +11,18 @@
                                 </div>
                             </div>
                             <div :class="{'col-md-6 my-auto order-2':1, 'order-md-1': index%2 == 1 }">
-                                <div class="mb-3 f11 finter colorgrey">
+                                <div class="mb-3 f11 finter text-white">
                                     <div class="mb-1">
                                         {{ $datearfan(b.attributes.createdAt) }} by {{ b.attributes.author }}
                                     </div class="mb-3">
-                                    <div class="text-truncate f34 fpoppins fw700">
+                                    <div class="text-truncate f34 fpoppins text-white fw700">
                                         {{ b.attributes.title }}
                                     </div>
-                                    <div class="description_blog finter f14 colorsecondary finter mb-5">
+                                    <div class="description_blog finter f14 text-white finter mb-5">
                                         {{ b.attributes.description }}
                                     </div>
                                     <div>
-                                        <nuxt-link :to="{name:'blog-id', params:{id:b.id}}" class="btn fpoppins f17 colorsecondary50">
+                                        <nuxt-link :to="{name:'blog-id', params:{id:b.id}}" class="btn fpoppins text-white f17 text-white">
                                             Read More <i class="fa fa-angle-right"></i>
                                         </nuxt-link>
                                         

@@ -7,14 +7,14 @@
 
             <div v-if="blog.attributes">
             
-                <div class="text-center mb-1 f14 finter colorgrey">
+                <div class="text-center mb-1 f14 finter text-white">
                     {{ $datearfan(blog.attributes.createdAt) }}  by {{ blog.attributes.author }}
                 </div>
-                <div class="text-center mb-5 fw600 f53 fpoppins ">
+                <div class="text-center mb-5 fw600 f53 fpoppins text-white ">
                     {{ blog.attributes.title }}
                 </div>
                 <img v-if="blog.attributes.image.data" :src="baseUrl + blog.attributes.image.data.attributes.url" class="img-fluid d-block mx-auto mb-5 bd16">
-                <div class="f14 finter colorsecondary">
+                <div class="f14 finter text-white">
                     {{ blog.attributes.description }}
                 </div>
             </div>

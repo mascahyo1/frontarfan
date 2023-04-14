@@ -14,17 +14,17 @@
                             <div class="mb-1">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><nuxt-link to="/" class="colorgrey finter f11">Home</nuxt-link></li>
-                                        <li class="breadcrumb-item"><nuxt-link to="/work"  class="colorgrey finter f11">Work</nuxt-link></li>
-                                        <li class="breadcrumb-item" v-if="work.attributes.work_category.data && work.attributes.work_category.data.attributes.name != 'PROJECT'" ><nuxt-link  class="colorgrey finter f11" :to="{name:'work-category-id', params:{id:work.attributes.work_category.data.id}}">{{work.attributes.work_category.data.attributes.name}}</nuxt-link></li>
-                                        <li class="breadcrumb-item active " aria-current="page"><nuxt-link to="#" class="colorgrey finter f11">{{ work.attributes.title }}</nuxt-link></li>
+                                        <li class="breadcrumb-item"><nuxt-link to="/" class="text-white finter f11">Home</nuxt-link></li>
+                                        <li class="breadcrumb-item"><nuxt-link to="/work"  class="text-white finter f11">Work</nuxt-link></li>
+                                        <li class="breadcrumb-item" v-if="work.attributes.work_category.data && work.attributes.work_category.data.attributes.name != 'PROJECT'" ><nuxt-link  class="text-white finter f11" :to="{name:'work-category-id', params:{id:work.attributes.work_category.data.id}}">{{work.attributes.work_category.data.attributes.name}}</nuxt-link></li>
+                                        <li class="breadcrumb-item active " aria-current="page"><nuxt-link to="#" class="text-white finter f11">{{ work.attributes.title }}</nuxt-link></li>
                                     </ol>
                                 </nav>
                             </div>
-                            <div class="f34 fpoppins fw700 mb-4 fdarkprimary">
+                            <div class="f34 fpoppins text-white fw700 mb-4 text-white">
                                 {{ work.attributes.title }}
                             </div>
-                            <div class="f14 finter  mb-4 colorsecondary">
+                            <div class="f14 finter  mb-4 text-white">
                                 {{ work.attributes.description }}
                             </div>
                         </div>
@@ -40,9 +40,9 @@
                             <div class="row">
                                 <div class="col-md-4 mb-3 ">
                                     <div class="mb-3">
-                                        <span class="fpoppins fw700 fdarkprimary  f21">Tools</span>
+                                        <span class="fpoppins text-white fw700 text-white  f21">Tools</span>
                                         <ul class="nobullet mt-3">
-                                            <li class="colorsecondary finter f14" v-for="t in work.attributes.tools.data">
+                                            <li class="text-white finter f14" v-for="t in work.attributes.tools.data">
                                                 {{t.attributes.name}}
                                             </li>   
                                         </ul>
@@ -50,15 +50,15 @@
                                 </div>
                                 <div class="col-md-4 mb-3 ">
                                     <div class="mb-3">
-                                        <div class="fpoppins fw700 fdarkprimary f21 mb-3">Client</div>
-                                        <div class="colorsecondary finter f14">{{ work.attributes.client }}</div>
+                                        <div class="fpoppins text-white fw700 text-white f21 mb-3">Client</div>
+                                        <div class="text-white finter f14">{{ work.attributes.client }}</div>
                                     </div>
                                     
                                 </div>
                                 <div class="col-md-4 mb-3 ">
                                     <div class="mb-3">
-                                        <div class="fpoppins fw700 fdarkprimary mb-3 f21">Timeframe</div>
-                                        <div class="colorsecondary finter f14">{{ $montharfan(work.attributes.start) }} - {{ $montharfan(work.attributes.finish) }}</div>
+                                        <div class="fpoppins text-white fw700 text-white mb-3 f21">Timeframe</div>
+                                        <div class="text-white finter f14">{{ $montharfan(work.attributes.start) }} - {{ $montharfan(work.attributes.finish) }}</div>
                                     </div>
                                     
                                 </div>
