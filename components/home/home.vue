@@ -1,7 +1,8 @@
 <template>
     <div>
       <AboutHome />
-      <workHome />
+      <ServicesComponent />
+      <SomeWorkComponent />
     </div>
   </template>
   

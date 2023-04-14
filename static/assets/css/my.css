@@ -60,6 +60,11 @@ margin-top: auto;
 }
 .f40 {
     font-size: 40px;
+    line-height: 48px;
+}
+.f48 {
+    font-size: 48px;
+    line-height: 58px;
 }
 .f30 {
     font-size: 30px;
@@ -67,6 +72,10 @@ margin-top: auto;
 .f42 {
     font-size: 42.72px;
     line-height: 64px;
+}
+.f35 {
+    font-size: 35px;
+    line-height: 42px;
 }
 .f64 {
     font-size: 64px;
@@ -80,6 +89,32 @@ margin-top: auto;
 }
 .colorblack {
     color: #000000;
+}
+.bg3F4D7C {
+    background-color: #3F4D7C!important;
+}
+.p34px {
+    padding: 34px!important;
+}
+.f24 {
+    font-size: 24px!important;
+    line-height: 29px!important;
+}
+.px-30px {
+    padding-left: 30px!important;
+    padding-right: 30px!important;
+}
+.py-13px {
+    padding-top: 13px!important;
+    padding-bottom: 13px!important;
+}
+.centerdetailservicesbtn {
+    
+  bottom: calc(0% - 43px);
+  left: calc(50% - 36.5px);
+}
+.mb100px {
+    margin-bottom: 100px;
 }
 .fw400 {
     font-weight: 400;
@@ -109,7 +144,9 @@ margin-top: auto;
     /* margin:0!important */
 
 }
-
+.bgFED83C {
+    background-color: #FED83C!important;
+}
 .btncontact {
     background-color: #FED83C!important;
     border-radius: 16px;
@@ -119,7 +156,7 @@ margin-top: auto;
     font-style: normal;
 }
 .ffreehouse {
-    font-family: 'Freehouse';    font-style: normal;
+    font-family: 'Freehouse'!important;    font-style: normal!important;
 }
 .f34 {
     font-size: 34.18px;
@@ -166,7 +203,37 @@ line-height: 14px;
     color: #626262;
 }
 .bd16 {
-    border-radius: 16px;
+    border-radius: 16px!important;
+}
+.pd19px {
+    padding: 19px!important;
+}
+.bd100 {
+    border-radius: 100%!important;
+}
+.bg1CD793 {
+    background-color: #1CD793!important;
+}
+.f29 {
+    font-size: 29px!important;
+    line-height: 36px!important;
+}
+.bg376FFE {
+    background-color: #376FFE!important;
+
+}
+.color1CD793 {
+    color: #1CD793!important;
+}
+/* .servicesdetailcut {
+    overflow: hidden;
+
+} */
+.color376FFE {
+    color: #376FFE!important;
+}
+.bgFC7899 {
+    background-color: #FC7899!important;
 }
 .container_img_about {
     /* padding: 10px; */
@@ -188,6 +255,9 @@ line-height: 14px;
     margin: 0;
     padding: 0;
   }
+.color180830 {
+    color: #180830;
+}
 .finter {
     font-family: 'Inter';
     font-style: normal;

@@ -55,20 +55,23 @@
         </div>
         <div class="footer">
             <footer>
-                <div class="container">
-                    <div class="text-center mb-5">
-                        <i class="fab fa-behance me-3 footer_sosmed"></i>
-                        <i class="fab fa-linkedin-in me-3 footer_sosmed"></i>
-                        <i class="fab fa-instagram footer_sosmed"></i>
-                    </div>
-                    <div class="text-center mb-1 f17 fpoppins">
-                        Made in Jogjakarta
-                    </div>
-                    <div class="text-center finter f14">
-                        © 2022 - {{ new Date().getFullYear() }}
+                <div class="container bg3F4D7C py-5 bd16">
+                    <div class="row">
+                        <div class="col-md-6 my-auto">
+                            <div class="mb-5">
+                                <img src="/assets/img/logo.png" class="img-fluid mb-1">
+                                <div class="ps-3 f14 fnunito text-white ">Arfan Amrullah, Graphic & UI/UX Designer - {{ new Date().getFullYear() }}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-auto">
+                            <div class="mb-5">
+                                <nuxt-link class="bd16 p34px mx-3 bgFC7899 mb-4 " to="#"><i class="fa-brands f29 fa-behance colorblack"></i></nuxt-link>
+                                <nuxt-link class="bd16 p34px mx-3 bg1CD793 mb-4 " to="#"><i class="fa-brands f29 fa-linkedin-in colorblack"></i></nuxt-link>
+                                <nuxt-link class="bd16 p34px mx-3 bg376FFE mb-4 " to="#"><i class="fa-brands f29 fa-instagram colorblack"></i></nuxt-link>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <img src="/assets/img/footerarfan.svg" class="w-100 d-none d-md-block">
             </footer>
         </div>
 
