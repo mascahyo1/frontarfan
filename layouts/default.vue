@@ -10,9 +10,9 @@
             </div>
           </div> -->
             <nuxt />
+        <Footer/>
         </main>
       </div>
-        <Footer/>
     </div>
   </template>
   

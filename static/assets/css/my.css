@@ -24,6 +24,8 @@
       }
 .body {
      
+    background-image: radial-gradient(#300c54, 3.19px, transparent 0)!important; /* pola bintik-bintik */
+    background-size: 50px 50px!important; /* ukuran pola bintik-bintik */
     min-height: 100vh!important;
     display: flex;
     flex-direction: column;
