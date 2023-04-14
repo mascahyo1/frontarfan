@@ -11,7 +11,7 @@
             </div>
             <div class="row align-items-stretch">
 
-                <div class="col-md-4 mb100px" v-for="(r,index) in responseData">
+                <div class="col-md-4 mb100px" v-for="(r,index) in responseData" v-scroll-observer="$animateCard">
                     <div :class="{'card bd16':1, 'bg1CD793':index % 3 == 0,  'bg376FFE':index % 3 == 1,  'bgFC7899':index % 3 == 2}">
                         <div :class="{'card-body bd16': 1, 'bg1CD793':index % 3 == 0,  'bg376FFE':index % 3 == 1,  'bgFC7899':index % 3 == 2}">
                             <div class="text-white text-center f40 ffreehouse">{{ r.attributes.name }}</div>
@@ -35,6 +35,7 @@
             }
         },
         methods: {
+
             async getData() {
                 this.spinner = true
                 try {

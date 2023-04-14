@@ -39,6 +39,12 @@ export default {
       
       {
         rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css',
+        // integrity: 'sha512-...',
+        // crossorigin: 'anonymous'
+      },
+      {
+        rel: 'stylesheet',
         href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
         // integrity: 'sha512-...',
         // crossorigin: 'anonymous'
@@ -70,6 +76,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '@/plugins/antd-ui',
+    '@plugins/scroll-observer.js',
+    // '@plugins/global-methods.js',
     { src: '~/plugins/myGlobals.js' },
     { src: '~/plugins/axios.js' },
     { src: '~/plugins/bootstrap.js', mode: 'client' }

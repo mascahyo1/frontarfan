@@ -10,7 +10,7 @@
                 <span class="color1CD793">WORK</span>
             </div>
             <div class="row">
-                <div class="col-md-12" v-for="r in responseData">
+                <div class="col-md-12" v-for="r in responseData" v-scroll-observer="$animateCard">
                     <div class="row">
                         <div class="col-md-6 my-auto">
                             <div class="mb-5">

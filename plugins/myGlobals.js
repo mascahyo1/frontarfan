@@ -17,5 +17,9 @@ export default (context, inject) => {
       let month = ['January', 'Februari', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
       return month[date.getMonth()] + ' ' + date.getFullYear();
     });
+    inject('animateCard', (card) => {
+      card.classList.add('animate__animated', 'animate__fadeInUp')
+    });
+    
 
   };
