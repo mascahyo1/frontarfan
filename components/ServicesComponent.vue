@@ -9,7 +9,7 @@
                 <span class="text-white">SERVICES </span>
                 <span class="color376FFE">I OFFER</span>
             </div>
-            <div class="row">
+            <div class="row align-items-stretch">
 
                 <div class="col-md-4 mb100px" v-for="(r,index) in responseData">
                     <div :class="{'card bd16':1, 'bg1CD793':index % 3 == 0,  'bg376FFE':index % 3 == 1,  'bgFC7899':index % 3 == 2}">
@@ -17,7 +17,7 @@
                             <div class="text-white text-center f40 ffreehouse">{{ r.attributes.name }}</div>
                             <div class="text-center color180830 f35 ffreehouse mb-5">DESIGN</div>
                             <p class="color180830 f14 fw700 mb-5">{{ r.attributes.description }}</p>
-                            <nuxt-link class="centerdetailservicesbtn bgFED83C bd100 pd19px position-absolute" :to="{name:'work-category-id', params:{id:r.id}}"><i class="fas fa-arrow-right f40 colorblack"></i></nuxt-link>
+                            <nuxt-link class="centerdetailservicesbtn bgFED83C bd100 pd19px position-absolute" :to="{name:'work-category-id', params:{id:r.id}}"><i class="fas fa-arrow-right fi40 colorblack"></i></nuxt-link>
                         </div>
                     </div>
                 </div>

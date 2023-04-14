@@ -3,6 +3,7 @@
       <AboutHome />
       <ServicesComponent />
       <SomeWorkComponent />
+      <ContactHome />
     </div>
   </template>
   

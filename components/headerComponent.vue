@@ -5,7 +5,7 @@
                 <div class="container">
                     
         
-                    <nuxt-link class="navbar-brand  m-0 mx-auto d-block d-md-none" to="/#" ><img src="/assets/img/logo.png" class="img-fluid d-block mx-auto"></nuxt-link>
+                    <nuxt-link class="navbar-brand  m-0 mx-auto d-block d-md-none" to="/" ><img src="/assets/img/logo.png" class="img-fluid d-block mx-auto"></nuxt-link>
                     <div class="collapse navbar-collapse" id="mynavbar">
                     <ul class="ms-auto">
 
@@ -21,7 +21,7 @@
                             <nuxt-link :class="{'nav-link f14 finter ':1, 'active':$route.path.includes('/project')}" to="/project">Project</nuxt-link>
                         </li>
                     </ul>
-                    <nuxt-link class="navbar-brand   d-none d-md-block" to="/#" ><img src="/assets/img/logo.png" class="img-fluid "></nuxt-link>
+                    <nuxt-link class="navbar-brand   d-none d-md-block" to="/" ><img src="/assets/img/logo.png" class="img-fluid "></nuxt-link>
                     <ul class=" navbar-nav ">
                         <li class="nav-item px-0 px-xl-5 px-lg-3 px-md-2">
                             <nuxt-link :class="{'nav-link f14 finter ':1, 'active':$route.path.includes('/blog')}" to="/blog">Blog</nuxt-link>

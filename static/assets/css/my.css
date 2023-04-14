@@ -255,6 +255,10 @@ line-height: 14px;
     margin: 0;
     padding: 0;
   }
+.f96 {
+    font-size: 96px;
+    line-height: 115px;
+}
 .color180830 {
     color: #180830;
 }
@@ -469,7 +473,19 @@ button.slick-arrow {
 .tabslider a {
     display: inline-block;
 }
+.fi29 {
+    font-size: 29px;
+    line-height: 29px;
+}
+.fi40 {
+    font-size: 40px!important;
+    line-height: 40px!important;
+}
 @media only screen and (max-width: 575px) {
+    .f96 {
+        font-size: 48px;
+        line-height: 57px;
+    }
     .imggrid {
         height: 336.59px!important;
     }
@@ -479,7 +495,7 @@ button.slick-arrow {
         object-fit: cover;
     }
     .navbar-brand img {
-        width: 49.9px;
+        /* width: 49.9px; */
     }
     .navbar-brand {
         /* padding-top: 7.02px!important;
