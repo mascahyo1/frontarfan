@@ -6,7 +6,7 @@
             </div>
             <div v-else>
                 <div v-if="activeCategory == -1">
-                    <div class="text-center mb-1 f17 fpoppins text-white text-white">
+                    <div class="text-center mb-1 f17 fpoppins text-white text-white" v-scroll-observer="$animateCard">
                         MY WORK
                     </div>
                     <div class="text-center mb-5 f42 fw600 fpoppins">
@@ -16,12 +16,12 @@
                 </div>
                 <div v-else>
                     <div class="row justify-content-center mb-5">
-                        <div class="col-auto  my-auto">
+                        <div class="col-auto  my-auto" v-scroll-observer="$animateCardFadeLeft">
                             <div class="mb-3">
                                 <img v-if="imgUrl" :src="baseUrl+imgUrl" class="img-fluid d-block mx-auto img_cat_work">
                             </div>
                         </div>
-                        <div class="col-md-9 my-auto">
+                        <div class="col-md-9 my-auto" v-scroll-observer="$animateCardFadeRight">
                             <div class="mb-3 finter f11 text-white mb-1">
                                 <div>
                                 Projects in

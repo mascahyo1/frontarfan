@@ -2,7 +2,7 @@
     <div>
         <div class="row justify-content-center">
 
-            <div v-for="(r,index) in data" class="col-md-4 mb-5">
+            <div v-for="(r,index) in data" class="col-md-4 mb-5" v-scroll-observer="$animateCard">
                 
                 <nuxt-link :to="{name:'work-detail-id', params:{id:r.id}}">
                   <div v-if="r.attributes.type == 'video'">

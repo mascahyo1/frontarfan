@@ -20,6 +20,15 @@ export default (context, inject) => {
     inject('animateCard', (card) => {
       card.classList.add('animate__animated', 'animate__fadeInUp')
     });
+    inject('animateCardFadeDown', (card) => {
+      card.classList.add('animate__animated', 'animate__fadeInDown')
+    });
+    inject('animateCardFadeLeft', (card) => {
+      card.classList.add('animate__animated', 'animate__fadeInLeft')
+    });
+    inject('animateCardFadeRight', (card) => {
+      card.classList.add('animate__animated', 'animate__fadeInRight')
+    });
     
 
   };

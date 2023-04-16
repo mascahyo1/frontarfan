@@ -10,13 +10,13 @@
 
                 <div class="" v-if="work.attributes">
                     <div class="row">
-                        <div class="col-md-4 mb-3">
+                        <div class="col-md-4 mb-3" v-scroll-observer="$animateCardFadeLeft">
                             <div class="mb-1">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><nuxt-link to="/" class="text-white finter f11">Home</nuxt-link></li>
                                         <li class="breadcrumb-item"><nuxt-link to="/work"  class="text-white finter f11">Work</nuxt-link></li>
-                                        <li class="breadcrumb-item" v-if="work.attributes.work_category.data && work.attributes.work_category.data.attributes.name != 'PROJECT'" ><nuxt-link  class="text-white finter f11" :to="{name:'work-category-id', params:{id:work.attributes.work_category.data.id}}">{{work.attributes.work_category.data.attributes.name}}</nuxt-link></li>
+                                        <!-- <li class="breadcrumb-item" v-if="work.attributes.work_category.data && work.attributes.work_category.data.attributes.name != 'PROJECT'" ><nuxt-link  class="text-white finter f11" :to="{name:'work-category-id', params:{id:work.attributes.work_category.data.id}}">{{work.attributes.work_category.data.attributes.name}}</nuxt-link></li> -->
                                         <li class="breadcrumb-item active " aria-current="page"><nuxt-link to="#" class="text-white finter f11">{{ work.attributes.title }}</nuxt-link></li>
                                     </ol>
                                 </nav>
@@ -28,7 +28,7 @@
                                 {{ work.attributes.description }}
                             </div>
                         </div>
-                        <div class="col-md-8 mb-3">
+                        <div class="col-md-8 mb-3" v-scroll-observer="$animateCardFadeRight">
                             <div v-if="work.attributes.type == 'video'">
                                 <div v-if="work.attributes.youtube_id">
                                     <iframe  class="" width="100%" height="300px" allow="fullscreen;" :src="'https://www.youtube.com/embed/'+work.attributes.youtube_id+'?autoplay=0&cc_load_policy=1&mute=0&loop=1&playlist='+work.attributes.youtube_id+'&controls=1&showinfo=0'"></iframe>
@@ -69,7 +69,7 @@
                 
             </div>
         </div>
-                <div class="container-fluid mt-5 px-4 px-md-0">
+                <div class="container-fluid mt-5 px-4 px-md-0" v-scroll-observer="$animateCard">
                     <VueSlickCarousel v-if="workSlider.length"  v-bind="settings" class="mb-5">
                         <div v-for="w in workSlider" class="workslider">
                             

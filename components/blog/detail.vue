@@ -5,7 +5,7 @@
         </div>
         <div v-else>
 
-            <div v-if="blog.attributes">
+            <div v-if="blog.attributes" v-scroll-observer="$animateCard">
             
                 <div class="text-center mb-1 f14 finter text-white">
                     {{ $datearfan(blog.attributes.createdAt) }}  by {{ blog.attributes.author }}

@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div class="container my-5 py-5">
-            <img src="/assets/img/aboutimg.png" class="img-fluid d-block mx-auto mb-5">
+        <div class="container my-5 py-5" >
+            <img src="/assets/img/aboutimg.png" class="img-fluid d-block mx-auto mb-5" v-scroll-observer="$animateCardFadeDown">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-8" v-scroll-observer="$animateCardFadeLeft">
                     <div class="row">
                         <div class="col-auto p-0 z-index-2 position-relative">
                             <img src="/assets/img/selfie.png">
@@ -18,7 +18,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 my-auto">
+                <div class="col-md-4 my-auto" v-scroll-observer="$animateCardFadeRight">
                     <nuxt-link class="btn btncontact" to="#">
                         <div class="f32 fblack fw400 ffreehouse">
                             CONTACT ME 

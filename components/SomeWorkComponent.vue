@@ -1,14 +1,14 @@
 <template>
     <div class="container my-5 py-5">
 
+        <div class="ffreehouse f48 mb-5" v-scroll-observer="$animateCard">
+            <span class="text-white">SOME </span>
+            <span class="color1CD793">WORK</span>
+        </div>
         <div v-if="spinner">
             <spinnerComponent/>
         </div>
         <div v-else>
-            <div class="ffreehouse f48 mb-5">
-                <span class="text-white">SOME </span>
-                <span class="color1CD793">WORK</span>
-            </div>
             <div class="row">
                 <div class="col-md-12" v-for="r in responseData" v-scroll-observer="$animateCard">
                     <div class="row">

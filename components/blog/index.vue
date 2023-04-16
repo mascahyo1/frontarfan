@@ -4,7 +4,7 @@
             <div class="row mb-5">
                 <div class="col-12 mb-5"  v-for="(b,index) in blog">
 
-                        <div class="row">
+                        <div class="row"  v-scroll-observer="$animateCard">
                             <div :class="{'col-md-6 my-auto order-1':1, 'order-md-2': index%2 == 1}" >
                                 <div class="mb-3">
                                 <img v-if="b.attributes.image.data" :src="baseUrl + b.attributes.image.data.attributes.url" class="img-fluid bd16">
@@ -37,7 +37,7 @@
                 <spinnerComponent/>
             </div>
             <div class="text-center" v-if="total > start">
-                <button @click="getBlog()" class="btn text-center">Load More</button>
+                <button @click="getBlog()" class="btn text-center text-white">Load More</button>
             </div>
             </div>
         </div>

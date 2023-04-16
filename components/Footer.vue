@@ -57,13 +57,13 @@
             <footer class="pb-5">
                 <div class="container bg3F4D7C py-5 bd16 mb-5">
                     <div class="row">
-                        <div class="col-md-6 my-auto">
+                        <div class="col-md-6 my-auto" v-scroll-observer="$animateCardFadeLeft">
                             <div class="mb-5">
                                 <img src="/assets/img/logo.png" class="img-fluid mb-1">
                                 <div class="ps-3 f14 fnunito text-white ">Arfan Amrullah, Graphic & UI/UX Designer - {{ new Date().getFullYear() }}</div>
                             </div>
                         </div>
-                        <div class="col-md-6 my-auto">
+                        <div class="col-md-6 my-auto" v-scroll-observer="$animateCardFadeRight">
                             <div class="">
                                 <nuxt-link class="bd16 p34px mx-3 bgFC7899 d-inline-block mb-4 " to="#"><i class="fa-brands fi29 fa-behance colorblack"></i></nuxt-link>
                                 <nuxt-link class="bd16 p34px mx-3 bg1CD793 d-inline-block mb-4 " to="#"><i class="fa-brands fi29 fa-linkedin-in colorblack"></i></nuxt-link>

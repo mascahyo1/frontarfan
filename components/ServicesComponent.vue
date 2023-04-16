@@ -5,7 +5,7 @@
             <spinnerComponent/>
         </div>
         <div v-else>
-            <div class="ffreehouse f48 mb-5">
+            <div class="ffreehouse f48 mb-5" id="#services" v-scroll-observer="$animateCard">
                 <span class="text-white">SERVICES </span>
                 <span class="color376FFE">I OFFER</span>
             </div>

@@ -9,8 +9,8 @@
                 <span class="fred">Project</span>
             </div>
             <div class="row mb-5">
-                <div class="col-12 mb-5">
-                    <div class="row" v-for="r in responseData">
+                <div class="col-12 mb-5" >
+                    <div class="row" v-for="r in responseData" v-scroll-observer="$animateCard">
                         <div class="col-md-6 mb-3">
                             <div class="mb-3 text-white fw700 f34 fpoppins">
                                 {{ r.attributes.title }}
