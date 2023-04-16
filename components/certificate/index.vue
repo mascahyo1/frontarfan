@@ -2,7 +2,7 @@
     <div>
         <div class="container my-5 pt-5">
             <div class="row mb-5">
-                <div class="col-12 mb-5"  v-for="(b,index) in blog">
+                <div class="col-12 mb-5"  v-for="(b,index) in blog"  v-scroll-observer="$animateCard">
 
                         <div class="row">
                             <div :class="{'col-md-6 my-auto order-1':1, 'order-md-2': index%2 == 1}" >

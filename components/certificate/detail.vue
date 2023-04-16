@@ -5,7 +5,7 @@
         </div>
         <div v-else>
 
-            <div v-if="certificate.attributes">
+            <div v-if="certificate.attributes"  v-scroll-observer="$animateCard">
             
                 <div class="text-center mb-5 fw600 f53 fpoppins text-white ">
                     {{ certificate.attributes.name }}

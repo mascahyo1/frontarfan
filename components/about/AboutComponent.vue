@@ -22,7 +22,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="f14 finter fsecondary200 mb-5">
+                    <div class="f14 finter text-white mb-5 tex">
                         {{ responseData.attributes.description }}
                     </div>
                     <div class="text-center mb-5">
@@ -31,7 +31,7 @@
                             <i class="fas fa-file-alt"></i>
                         </a>
                     </div>
-                    <div class="mb-5 text-center fw700 f27 fpoppins">
+                    <div class="mb-5 text-center fw700 f27 fpoppins text-white">
                         Work Experience
                     </div>
                     <div class="">
@@ -56,7 +56,7 @@
                         </VueSlickCarousel>
 
                     </div>
-                    <div class="mb-5 text-center fw700 f27 fpoppins">
+                    <div class="mb-5 text-center fw700 f27 fpoppins text-white">
                         Certifications
                         {{ cetificate }}
                     </div>

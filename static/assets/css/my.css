@@ -58,7 +58,7 @@ margin-top: auto;
     border-radius: 20px 20px 0px 0px;
 }
 .bgred {
-    background: white!important;
+    /* background: white!important; */
 }
 .nav-tabs .nav-link.active {
     background-color: transparent!important;
@@ -316,7 +316,7 @@ line-height: 80px;
     border-radius: 100%;
 }
 .slick-arrow:hover {
-    background-color: white!important;
+    background-color: #212121!important;
     color: white!important;
 }
 button.slick-arrow.slick-prev {
