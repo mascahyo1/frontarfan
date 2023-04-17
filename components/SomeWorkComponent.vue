@@ -30,7 +30,7 @@
                                 <div class="mb-4 text-white f40 ffreehouse">
                                     {{ r.attributes.title }}
                                 </div>
-                                <div class="mb-4 text-white f14 fnunito">
+                                <div class="mb-4 text-white f14 fnunito desc_work">
                                     {{ r.attributes.description }}
                                 </div>
                                 <div class="mb-4">

@@ -62,7 +62,7 @@
                 <spinnerComponent/>
             </div>
             <div class="text-center" v-if="total > start">
-                <button @click="getProject()" class="btn text-center">Load More</button>
+                <button @click="getProject()" class="btn text-center text-white">Load More</button>
             </div>
         </div>
     </div>
