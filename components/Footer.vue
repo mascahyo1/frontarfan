@@ -27,13 +27,13 @@
                                     </div>
                                 </nuxt-link>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <nuxt-link to="/blog" :class="{'nav-link':1, 'active':$route.path.includes('/blog')}" >
                                     <div class="text-center text-white">
                                         <i class="fa fa-blog f30"></i>
                                     </div>
                                 </nuxt-link>
-                            </li>
+                            </li> -->
                             <li class="nav-item">
                                 <nuxt-link to="/contact" :class="{'nav-link':1, 'active':$route.path == '/contact'}" >
                                     <div class="text-center text-white">

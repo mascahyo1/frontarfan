@@ -17,18 +17,21 @@
                         <li class="nav-item px-0 px-xl-5 px-lg-3 px-md-2">
                             <nuxt-link :class="{'nav-link f14 finter ':1, 'active':$route.path.includes('/work')}" to="/work">Services</nuxt-link>
                         </li>
-                        <li class="nav-item px-0 px-xl-5 px-lg-3 px-md-2">
+                        <!-- <li class="nav-item px-0 px-xl-5 px-lg-3 px-md-2">
                             <nuxt-link :class="{'nav-link f14 finter ':1, 'active':$route.path.includes('/project')}" to="/project">Work</nuxt-link>
-                        </li>
+                        </li> -->
                     </ul>
                     <nuxt-link class="navbar-brand   d-none d-md-block" to="/" ><img src="/assets/img/logo.png" class="img-fluid "></nuxt-link>
                     <ul class=" navbar-nav ">
                         <li class="nav-item px-0 px-xl-5 px-lg-3 px-md-2">
+                            <nuxt-link :class="{'nav-link f14 finter ':1, 'active':$route.path.includes('/project')}" to="/project">Work</nuxt-link>
+                        </li>
+                        <!-- <li class="nav-item px-0 px-xl-5 px-lg-3 px-md-2">
                             <nuxt-link :class="{'nav-link f14 finter ':1, 'active':$route.path.includes('/blog')}" to="/blog">Blog</nuxt-link>
-                        </li>
-                        <li class="nav-item px-0 px-xl-5 px-lg-3 px-md-2">
+                        </li> -->
+                        <!-- <li class="nav-item px-0 px-xl-5 px-lg-3 px-md-2">
                             <nuxt-link :class="{'nav-link f14 finter ':1, 'active':$route.path.includes('/about')}" to="/about">About</nuxt-link>
-                        </li>
+                        </li> -->
                         <li class="nav-item px-0 pe-xl-0 ps-xl-5 ps-lg-3 pe-lg-0 ps-md-2 pe-md-0">
                             <nuxt-link :class="{'nav-link f14 finter ':1, 'active':$route.path.includes('/contact')}" to="/contact">Contact</nuxt-link>
                         </li>

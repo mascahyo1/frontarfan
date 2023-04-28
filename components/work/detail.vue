@@ -10,7 +10,7 @@
 
                 <div class="" v-if="work.attributes">
                     <div class="row">
-                        <div class="col-md-4 mb-3" v-scroll-observer="$animateCardFadeLeft">
+                        <div class="col-md-12 mb-3" v-scroll-observer="$animateCardFadeLeft">
                             <div class="mb-1">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
@@ -21,22 +21,30 @@
                                     </ol>
                                 </nav>
                             </div>
-                            <div class="f34 fpoppins text-white fw700 mb-4 text-white">
+                            <div class="f40 ffreehouse text-white fw700 mb-4 text-white">
                                 {{ work.attributes.title }}
                             </div>
-                            <div class="f14 finter  mb-4 text-white">
+                            <div class="f20 fnunito  mb-4 text-white">
                                 {{ work.attributes.description }}
                             </div>
                         </div>
-                        <div class="col-md-8 mb-3" v-scroll-observer="$animateCardFadeRight">
-                            <div v-if="work.attributes.type == 'video'">
-                                <div v-if="work.attributes.youtube_id">
-                                    <iframe  class="" width="100%" height="300px" allow="fullscreen;" :src="'https://www.youtube.com/embed/'+work.attributes.youtube_id+'?autoplay=0&cc_load_policy=1&mute=0&loop=1&playlist='+work.attributes.youtube_id+'&controls=1&showinfo=0'"></iframe>
+                        <div class="col-md-12 mb-3" v-scroll-observer="$animateCardFadeRight">
+                            <div v-if="work.attributes.youtube_id" class="mb-5">
+                                <iframe  class="d-block mx-auto bd16" width="100%" height="500px" allow="fullscreen;" :src="'https://www.youtube.com/embed/'+work.attributes.youtube_id+'?autoplay=0&cc_load_policy=1&mute=0&loop=1&playlist='+work.attributes.youtube_id+'&controls=1&showinfo=0'"></iframe>
+                            </div>
+                            <div class="row mb-3"  v-if="work.attributes.image.data" >
+                                <div v-scroll-observer="$animateCard"  v-for="(w,index) in work.attributes.image.data" :class="{
+                                    'my-auto':1,
+                                    'col-md-12' :index % 3 == 0,
+                                    'col-md-8' :index % 3 == 1,
+                                    'col-md-4' :index % 3 == 2,
+                                    }">
+                                    <div class="mb-3">
+                                        <img :src="baseUrl + w.attributes.url" class="img-fluid d-block mx-auto mb-5 bd16">
+                                    </div>
                                 </div>
                             </div>
-                            <div v-else>
-                                <img v-if="work.attributes.image.data" :src="baseUrl + work.attributes.image.data.attributes.url" class="img-fluid d-block mx-auto mb-5 bd16">
-                            </div>
+
                             <div class="row">
                                 <div class="col-md-4 mb-3 ">
                                     <div class="mb-3">
@@ -65,28 +73,26 @@
                             </div>
                         </div>
                     </div>
+                    <div class="my-5 py-5">
+                        <div class="bgFED83C p-3">
+                            <div v-if="work.attributes.work_category.data" class="ffreehouse f64 colorblack mb-3">{{ work.attributes.work_category.data.attributes.name }}</div>
+                            <div class="row mb-3" v-if="work.attributes.tools.data">
+                                <div class="col-auto mb-3" v-for="t in work.attributes.tools.data">
+                                    <div class="bg2B41A1 bd32px text-white px-32px py-16px ffreehouse f20">
+                                        {{ t.attributes.name }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div v-if="work.attributes.work_category.data" class="mb-3 fnunito f20 color180830">
+                                {{ work.attributes.work_category }}
+                                {{ work.attributes.work_category.data.description }}
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
             </div>
         </div>
-                <div class="container-fluid mt-5 px-4 px-md-0" v-scroll-observer="$animateCard">
-                    <VueSlickCarousel v-if="workSlider.length"  v-bind="settings" class="mb-5">
-                        <div v-for="w in workSlider" class="workslider">
-                            
-                            <nuxt-link :to="{name:'work-detail-id', params:{id:w.id}}">
-                                <div v-if="w.attributes.type == 'video'">
-                                    <div v-if="w.attributes.youtube_id">
-                                        <img :src="'https://img.youtube.com/vi/'+w.attributes.youtube_id+'/mqdefault.jpg'" :class="{'imgslide bd16': 1}">
-                                    </div>
-
-                                </div>
-                                <div v-else>
-                                    <img :src="baseUrl+w.attributes.image.data.attributes.url" class="imgslide bd16">
-                                </div>
-                            </nuxt-link>
-                        </div>
-                    </VueSlickCarousel>
-                </div>
     </div>
 </template>
 
@@ -105,22 +111,6 @@ import VueSlickCarousel from 'vue-slick-carousel'
                 httpMethod: 'GET',
                 baseUrl: this.$imageurl,
                 workSlider: [],
-                settings: {
-                    dots: false,             //dots
-                    infinite: true,         //loop
-                    pauseOnHover: false,    //don't stop when hoverd
-                    centerMode:true,        //show the slides of both side 
-                    centerPadding:"20%", 
-                    responsive: [
-                        {
-                            breakpoint: 767,
-                            settings: {
-                                centerMode:false,        //show the slides of both side 
-                                // centerPadding:"20%", 
-                            }
-                        },
-                    ]   
-                }
             }
         },
         methods: {

@@ -14,7 +14,7 @@
                   </div>
                   <div v-else>
                     <div v-if="r.attributes.image.data">
-                        <img :src="baseUrl + r.attributes.image.data.attributes.url" :class="{'d-block mx-auto rounded-3 img-fluid bd16 imggrid': 1,'mt64': index % 3 != 1 }">
+                        <img :src="baseUrl + r.attributes.image.data[0].attributes.url" :class="{'d-block mx-auto rounded-3 img-fluid bd16 imggrid': 1,'mt64': index % 3 != 1 }">
                     </div>
                   </div>
                 </nuxt-link>

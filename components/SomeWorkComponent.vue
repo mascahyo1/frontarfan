@@ -21,7 +21,7 @@
 
                                 </div>
                                 <div v-else>
-                                    <img v-if="r.attributes.image"  :src="baseUrl+r.attributes.image.data.attributes.url" class="imgslide bd16">
+                                    <img v-if="r.attributes.image.data"  :src="baseUrl+r.attributes.image.data[0].attributes.url" class="imgslide bd16">
                                 </div>
                             </div>
                         </div>

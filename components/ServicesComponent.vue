@@ -14,10 +14,13 @@
                 <div class="col-md-4 mb100px" v-for="(r,index) in responseData" v-scroll-observer="$animateCard">
                     <div :class="{'card bd16':1, 'bg1CD793':index % 3 == 0,  'bg376FFE':index % 3 == 1,  'bgFC7899':index % 3 == 2}">
                         <div :class="{'card-body bd16': 1, 'bg1CD793':index % 3 == 0,  'bg376FFE':index % 3 == 1,  'bgFC7899':index % 3 == 2}">
-                            <div class="text-white text-center f40 ffreehouse text-truncate">{{ r.attributes.name }}</div>
-                            <div class="text-center color180830 f35 ffreehouse mb-5">DESIGN</div>
+                            <div class="text-white text-center f35 f30-xl f20-md f35-sm ffreehouse ">{{ r.attributes.name }}</div>
+                            <div class="text-center color180830 f35 f30-xl f20-md f35-sm ffreehouse mb-5">DESIGN</div>
                             <p class="color180830 f14 fw700 mb-5 desc_services">{{ r.attributes.description }}</p>
-                            <nuxt-link class="centerdetailservicesbtn bgFED83C bd100 pd19px position-absolute" :to="{name:'work-category-id', params:{id:r.id}}"><i class="fas fa-arrow-right fi40 colorblack"></i></nuxt-link>
+                            <nuxt-link class="centerdetailservicesbtn bgFED83C bd16 position-absolute f20 colorblack ffreehouse" to="/contact">
+                                <!-- <i class="fas fa-arrow-right fi40 colorblack"></i> -->
+                                CONTACT ME
+                            </nuxt-link>
                         </div>
                     </div>
                 </div>
