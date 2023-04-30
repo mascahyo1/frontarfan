@@ -29,6 +29,10 @@ export default (context, inject) => {
     inject('animateCardFadeRight', (card) => {
       card.classList.add('animate__animated', 'animate__fadeInRight')
     });
+    inject('addHttpsPrefix', (url) => {
+        const httpsUrl = /^https:\/\//i.test(url) ? url : `https://${url}`
+        return httpsUrl.replace(/^http:\/\//i, 'https://')      
+    })
     
 
   };

@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 my-auto text-center my-auto" v-scroll-observer="$animateCardFadeRight">
-                    <nuxt-link class="btn btncontact mb-3" to="#">
+                    <nuxt-link class="btn btncontact mb-3" to="/contact#contactme">
                         <div class="f32 fblack fw400 ffreehouse">
                             CONTACT ME 
 

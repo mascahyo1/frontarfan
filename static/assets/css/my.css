@@ -5,6 +5,23 @@
     font-weight: normal;
     font-style: normal;
   }
+  .bg70A6DD {
+    background-color: #70A6DD!important;
+  }
+  .color70A6DD {
+    color: #70A6DD!important;
+  }
+  .color2B41A1 {
+    color: #2B41A1!important;
+  }
+  .f36 {
+    font-size: 36px;
+    line-height: 43px;
+  }
+  .f20 {
+    font-size: 20px!important;
+    line-height: 30px!important;
+}
   
      a:link { text-decoration: none; }
 
@@ -62,10 +79,6 @@ margin-top: auto;
 }
 .nav-tabs .nav-link.active {
     background-color: transparent!important;
-}
-.f40 {
-    font-size: 40px;
-    line-height: 48px;
 }
 .f48 {
     font-size: 48px;
@@ -193,7 +206,7 @@ margin-top: auto;
 }
 .f14 {
     font-size: 14px;
-    line-height: 17px;
+    line-height: 180%;
 }
 .z-index-1 {
     z-index: 1;
@@ -208,8 +221,18 @@ margin-top: auto;
 .ml-75 {
     margin-left: -75px;
 }
+.f40 {
+    font-size: 40px!important;
+    line-height: 48px!important;
+}
 .bg312345 {
     background-color: #312345!important;
+}
+.color312345 {
+    color: #312345!important;
+}
+.bgwhite {
+    background-color: white!important;
 }
 .img_selfie {
     position: absolute;
@@ -283,6 +306,25 @@ line-height: 14px;
 }
 .color180830 {
     color: #180830;
+}
+.px64 {
+    padding-left: 64px;
+    padding-right: 64px;
+}
+.py16 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+.py13{
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+.px33 {
+    padding-left: 33px;
+    padding-right: 33px;
+}
+.fullCapital {
+    text-transform: capitalize;
 }
 .finter {
     font-family: 'Inter';
@@ -502,9 +544,24 @@ button.slick-arrow {
 }
 
 @media only screen and (max-width: 767px) {
+    .w300-sm {
+        width: 300px!important;
+    }
     .f35-sm {
         font-size: 35px!important;
         line-height: 40px!important;
+    }
+    .f30-sm {
+        font-size: 30px!important;
+        line-height: 40px!important;
+    }
+    .f24-sm {
+        font-size: 24px!important;
+        line-height: 32px!important;
+    }
+    .f20-sm {
+        font-size: 20px!important;
+        line-height: 30px!important;
     }
     .ml-75 {
         margin-left: 0px!important;

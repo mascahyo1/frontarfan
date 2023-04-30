@@ -44,37 +44,10 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="row">
-                                <div class="col-md-4 mb-3 ">
-                                    <div class="mb-3">
-                                        <span class="fpoppins text-white fw700 text-white  f21">Tools</span>
-                                        <ul class="nobullet mt-3">
-                                            <li class="text-white finter f14" v-for="t in work.attributes.tools.data">
-                                                {{t.attributes.name}}
-                                            </li>   
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3 ">
-                                    <div class="mb-3">
-                                        <div class="fpoppins text-white fw700 text-white f21 mb-3">Client</div>
-                                        <div class="text-white finter f14">{{ work.attributes.client }}</div>
-                                    </div>
-                                    
-                                </div>
-                                <div class="col-md-4 mb-3 ">
-                                    <div class="mb-3">
-                                        <div class="fpoppins text-white fw700 text-white mb-3 f21">Timeframe</div>
-                                        <div class="text-white finter f14">{{ $montharfan(work.attributes.start) }} - {{ $montharfan(work.attributes.finish) }}</div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="my-5 py-5">
-                        <div class="bgFED83C p-3">
+                        <div class="bgFED83C p-3 bd16">
                             <div v-if="work.attributes.work_category.data" class="ffreehouse f64 colorblack mb-3">{{ work.attributes.work_category.data.attributes.name }}</div>
                             <div class="row mb-3" v-if="work.attributes.tools.data">
                                 <div class="col-auto mb-3" v-for="t in work.attributes.tools.data">
@@ -84,8 +57,10 @@
                                 </div>
                             </div>
                             <div v-if="work.attributes.work_category.data" class="mb-3 fnunito f20 color180830">
-                                {{ work.attributes.work_category }}
-                                {{ work.attributes.work_category.data.description }}
+                                <!-- {{ work.attributes.work_category.data }} -->
+                                <div v-if="work.attributes.work_category.data" class="color180830 fnunito f20">
+                                    {{ work.attributes.work_category.data.attributes.description }}
+                                </div>
                             </div>
                         </div>
                     </div>
