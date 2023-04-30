@@ -33,6 +33,19 @@ export default (context, inject) => {
         const httpsUrl = /^https:\/\//i.test(url) ? url : `https://${url}`
         return httpsUrl.replace(/^http:\/\//i, 'https://')      
     })
+    inject('contact', () => {
+      
+      console.log(this)  
+      app.$axios.get('about', {params: {populate:'*'}})
+      .then((res) => {
+        return res.data.data
+          
+      })
+      .catch((err) => {
+          console.log(err)
+      })
+    })
+
     
 
   };

@@ -6,7 +6,7 @@
                 <div class="col-md-8 my-auto" v-scroll-observer="$animateCardFadeLeft">
                     <div class="row justify-content-center mb-3">
                         <div class="col-md-3 p-0 z-index-2 position-relative my-auto">
-                            <img src="/assets/img/selfie.png" class="img-fluid d-block mx-auto">
+                            <img v-if="contact && contact.attributes && contact.attributes.image_home.data" :src="imageurl + contact.attributes.image_home.data.attributes.url" class="img-fluid d-block mx-auto">
                         </div>
                         <div class="col-md-8 p-0 my-auto">
                             <div class="card card-body f14 fnunito text-white bg312345 my-auto hmin121 ml-75 z-index-1">
@@ -35,4 +35,31 @@
 
 
 <script>
+export default {
+    data() {
+        return {
+            imageurl: this.$imageurl,
+            contact: '',
+            loading: true
+        }
+    },
+    methods: {
+        getContact() {
+            this.loading = true
+            this.$axios.get('about', {params: {populate:'*'}})
+            .then((res) => {
+                this.contact = res.data.data
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+            .finally(() => {
+                this.loading = false
+            })
+        }
+    },
+    mounted() {
+        this.getContact()
+    }
+}
 </script>

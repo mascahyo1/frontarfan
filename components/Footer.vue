@@ -64,10 +64,10 @@
                             </div>
                         </div>
                         <div class="col-md-6 my-auto" v-scroll-observer="$animateCardFadeRight">
-                            <div class="">
-                                <nuxt-link class="bd16 p34px mx-3 bgFC7899 d-inline-block mb-4 " to="#"><i class="fa-brands fi29 fa-behance colorblack"></i></nuxt-link>
-                                <nuxt-link class="bd16 p34px mx-3 bg1CD793 d-inline-block mb-4 " to="#"><i class="fa-brands fi29 fa-linkedin-in colorblack"></i></nuxt-link>
-                                <nuxt-link class="bd16 p34px mx-3 bg376FFE d-inline-block mb-4 " to="#"><i class="fa-brands fi29 fa-instagram colorblack"></i></nuxt-link>
+                            <div class="" v-if="contact">
+                                <a class="bd16 p34px mx-3 bgFC7899 d-inline-block mb-4 " :href="$addHttpsPrefix(contact.attributes.behance)" target="blank"><i class="fa-brands fi29 fa-behance colorblack"></i></a>
+                                <a class="bd16 p34px mx-3 bg1CD793 d-inline-block mb-4 " :href="$addHttpsPrefix(contact.attributes.linkedin)" target="blank"><i class="fa-brands fi29 fa-linkedin-in colorblack"></i></a>
+                                <a class="bd16 p34px mx-3 bg376FFE d-inline-block mb-4 " :href="$addHttpsPrefix(contact.attributes.instagram)" target="blank"><i class="fa-brands fi29 fa-instagram colorblack"></i></a>
                             </div>
                         </div>
                     </div>
@@ -81,6 +81,32 @@
 <script>
 
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  data() {
+    return {
+      contact: null,
+        loading: true
+    }
+  },
+  methods: {
+    //
+    
+    getContact() {
+            this.loading = true
+            this.$axios.get('about', {params: {populate:'*'}})
+            .then((res) => {
+                this.contact = res.data.data
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+            .finally(() => {
+                this.loading = false
+            })
+        }
+  },
+  mounted() {
+    this.getContact()
+  },
 }
 </script>

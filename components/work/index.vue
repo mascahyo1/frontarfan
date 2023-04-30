@@ -61,7 +61,7 @@
 
 
                 <div class="text-center" v-if="total > start">
-                    <button @click="getData()" class="btn text-center">Load More</button>
+                    <button @click="getData()" :class="{'btn text-center text-white':1, 'disabled':spinner == 1}">Load More</button>
                 </div>
             </div>
         </div>

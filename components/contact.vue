@@ -38,7 +38,7 @@
                 </div>
                 
                 <div class="row mb-5">
-                    <div class="col-md-6 mb-3"  v-scroll-observer="$animateCardFadeLeft">
+                    <div class="col-md-6 mb-3 my-auto"  v-scroll-observer="$animateCardFadeLeft">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card border-0 p-0 bd16 bg1CD793 mb-3">
@@ -56,7 +56,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-12" >
+                            <div class="col-md-12 my-auto" >
 
                                 <div class="card border-0 p-0 bd16 bgFC7899 mb-3" >
                                     <div class="card-body p-0">
